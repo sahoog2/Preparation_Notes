@@ -16,6 +16,7 @@
 > creating an object in one go using a constructor, the Builder pattern
 > allows controlled and customizable object creation.
 [Top](#top)
+
 <a name="WhyUse"></a>
 # Why Use the Builder Pattern?
 	
@@ -33,10 +34,9 @@
  - Step-by-Step Object Creation- The Builder pattern allows constructing objects in a controlled, step-by-step manner.
  - Immutability- Once built, the object remains immutable (i.e., cannot be changed), ensuring thread safety and reliability.
 [Top](#top)
+
 <a name="Structure"></a>
 ## Structure of the Builder Pattern
-
-	
 
 > It involves the following components:
 
