@@ -3,7 +3,7 @@
  - [# Why Use the Builder Pattern?](#WhyUse)
  - [## Key Principles of the Builder Pattern](#KeyPrinciples)
  - [## Structure of the Builder Pattern](#Structure)
- - [## Example Implementation in Java](#Implementation )
+ - [## Example Implementation in Java](#Implementation)
  - [## When Should You Use the Builder Pattern?](#WhenSudUse)
 
 
@@ -49,7 +49,7 @@
 [Top](#top)
 
 
-<a name="Implementation "></a>
+<a name="Implementation"></a>
 ## Example Implementation in Java
 
 	Here’s a basic example using the Builder pattern:
