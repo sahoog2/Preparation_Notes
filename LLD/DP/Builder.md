@@ -26,7 +26,8 @@
 > code difficult to manage. The Builder pattern simplifies object
 > creation by providing a dedicated builder class.
 [Top](#top)
-		
+
+  
 <a name="KeyPrinciples"></a>
 ## Key Principles of the Builder Pattern
 
@@ -34,6 +35,7 @@
  - Step-by-Step Object Creation- The Builder pattern allows constructing objects in a controlled, step-by-step manner.
  - Immutability- Once built, the object remains immutable (i.e., cannot be changed), ensuring thread safety and reliability.
 [Top](#top)
+
 
 <a name="Structure"></a>
 ## Structure of the Builder Pattern
@@ -45,6 +47,7 @@
  - Concrete Builder- Implements the builder interface and defines the actual construction process.
  - Director (Optional)- Controls the construction process and defines the order in which the object is built.
 [Top](#top)
+
 
 <a name="Implementation "></a>
 ## Example Implementation in Java
@@ -109,6 +112,7 @@
     			}
     		}
 [Top](#top)
+
 
 <a name="WhenSudUse"></a>
 ## When Should You Use the Builder Pattern?
