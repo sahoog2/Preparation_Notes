@@ -18,7 +18,7 @@
 [Top](#top)
 
 <a name="WhyUse"></a>
-# Why Use the Builder Pattern?
+## Why Use the Builder Pattern?
 	
 
 > When an object has a large number of optional parameters or complex
