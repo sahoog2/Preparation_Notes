@@ -1,9 +1,9 @@
  - [Definition](#Definition)
- - [# Why Use the Builder Pattern?](#%20Why%20Use%20the%20Builder%20Pattern?)
- - [## Key Principles of the Builder Pattern](##%20Key%20Principles%20of%20the%20Builder%20Pattern)
- - [## Structure of the Builder Pattern](##%20Structure%20of%20the%20Builder%20Pattern)
- - [## Example Implementation in Java](##%20Example%20Implementation%20in%20Java)
- - [## When Should You Use the Builder Pattern?](##%20When%20Should%20You%20Use%20the%20Builder%20Pattern?)
+ - [# Why Use the Builder Pattern?](#WhyUse)
+ - [## Key Principles of the Builder Pattern](#KeyPrinciples)
+ - [## Structure of the Builder Pattern](#Structure)
+ - [## Example Implementation in Java](#Implementation )
+ - [## When Should You Use the Builder Pattern?](#WhenSudUse)
 
 
 <a name="Definition"></a>
@@ -15,6 +15,7 @@
 > creating an object in one go using a constructor, the Builder pattern
 > allows controlled and customizable object creation.
 
+<a name="WhyUse"></a>
 # Why Use the Builder Pattern?
 	
 
@@ -24,13 +25,14 @@
 > creation by providing a dedicated builder class.
 
 		
-
+<a name="KeyPrinciples"></a>
 ## Key Principles of the Builder Pattern
 
  - Encapsulation of Object Construction- The object construction logic is separated from its representation, making it easy to modify or extend.
  - Step-by-Step Object Creation- The Builder pattern allows constructing objects in a controlled, step-by-step manner.
  - Immutability- Once built, the object remains immutable (i.e., cannot be changed), ensuring thread safety and reliability.
 
+<a name="Structure"></a>
 ## Structure of the Builder Pattern
 
 	
@@ -42,6 +44,7 @@
  - Concrete Builder- Implements the builder interface and defines the actual construction process.
  - Director (Optional)- Controls the construction process and defines the order in which the object is built.
 
+<a name="Implementation "></a>
 ## Example Implementation in Java
 
 	Here’s a basic example using the Builder pattern:
@@ -104,6 +107,7 @@
     			}
     		}
 
+<a name="WhenSudUse"></a>
 ## When Should You Use the Builder Pattern?
 
  - When a class has many optional parameters.
