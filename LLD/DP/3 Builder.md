@@ -92,7 +92,8 @@
     					this.color = color;
     					return this;
     				}
-    
+
+    				// build method to return the car class
     				public Car build() {
     					return new Car(this);
     				}
