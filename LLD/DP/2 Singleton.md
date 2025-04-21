@@ -30,6 +30,11 @@ The Singleton pattern is commonly used in scenarios such as:
 
 Below is an example of a thread-safe Singleton class implemented using the **lazy initialization method**:
 
+Steps:
+1. Static variable to hold the single instance
+2. Private constructor to prevent external instantiation
+3. Public static synchronized method to provide access to the single instance
+
     class Singleton {
         // Static variable to hold the single instance
         private static Singleton instance;
