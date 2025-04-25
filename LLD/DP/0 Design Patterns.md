@@ -55,3 +55,50 @@ Design patterns are broadly divided into three categories:
 ---
 
 By understanding and applying design patterns, developers can create robust software that stands the test of time. Would you like me to elaborate on any specific pattern or give examples in code?
+
+There are **23 standard design patterns**, as identified and documented by the "Gang of Four" (GoF) in their seminal book *Design Patterns: Elements of Reusable Object-Oriented Software*. These patterns are categorized into three types based on their purpose:
+
+---
+
+### **1. Creational Design Patterns** (5 Patterns)
+These deal with object creation mechanisms, providing ways to create objects while hiding the instantiation logic.
+
+- **Factory Method**
+- **Abstract Factory**
+- **Builder**
+- **Prototype**
+- **Singleton**
+
+---
+
+### **2. Structural Design Patterns** (7 Patterns)
+These focus on object composition and structure, facilitating the design of flexible and efficient class hierarchies.
+
+- **Adapter**
+- **Bridge**
+- **Composite**
+- **Decorator**
+- **Facade**
+- **Flyweight**
+- **Proxy**
+
+---
+
+### **3. Behavioral Design Patterns** (11 Patterns)
+These are concerned with communication and responsibility among objects, ensuring effective object collaboration.
+
+- **Chain of Responsibility**
+- **Command**
+- **Interpreter**
+- **Iterator**
+- **Mediator**
+- **Memento**
+- **Observer**
+- **State**
+- **Strategy**
+- **Template Method**
+- **Visitor**
+
+---
+
+These patterns serve as time-tested solutions for recurring software design problems, ensuring code maintainability, scalability, and reusability. If you'd like detailed explanations or examples of any specific pattern, let me know! 😊
