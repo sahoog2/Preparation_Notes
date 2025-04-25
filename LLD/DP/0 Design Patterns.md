@@ -52,11 +52,12 @@ Design patterns are broadly divided into three categories:
 - **Customize patterns**: Adapt the design pattern to the specific needs of your project.
 - **Keep it simple**: Avoid overengineering—use patterns where they genuinely simplify the solution.
 
+By understanding and applying design patterns, developers can create robust software that stands the test of time. 
+
 ---
 
-By understanding and applying design patterns, developers can create robust software that stands the test of time. Would you like me to elaborate on any specific pattern or give examples in code?
----
-###There are **23 standard design patterns**
+### **There are **23 standard design patterns**
+
 As identified and documented by the "Gang of Four" (GoF) in their seminal book *Design Patterns: Elements of Reusable Object-Oriented Software*. These patterns are categorized into three types based on their purpose:
 
 ---
