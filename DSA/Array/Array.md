@@ -242,7 +242,7 @@ function solve(mat, queries)
         print(answer)
 
 ```
-  
+Explanation : https://youtu.be/Hyr3VrgJD2g?feature=shared  
 
 -   Time complexity: O(1) per query, with precalculation of O(N * M)
 -   Space complexity: O(N * M)
