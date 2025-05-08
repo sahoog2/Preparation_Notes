@@ -37,15 +37,9 @@
 1.  What is prefix-sum?
     Given an array of size n, the prefix sum is another array (say prefixSum) of the same  size such that for each index 0 <= i < n, prefixSum[i] = a[0] + a[1] .... + a[i].
 
-  
-
 2.  How to calculate the prefix-sum?
-    
-
     -   prefixSum[2] = a[0] + a[1] + a[2]
-        
-    -   prefixSum[3] = a[0] + a[1] + a[2] + a[3] = prefixSum[2] + a[3]
-        
+    -   prefixSum[3] = a[0] + a[1] + a[2] + a[3] = prefixSum[2] + a[3]   
     -   Therefore, for all indexes i > 0, prefixSum[i] = prefixSum[i-1] + a[i]
     
 ```java
@@ -56,19 +50,15 @@ for i → 1 to (array.length - 1) {
 }
 
 ```
-```
-Time Complexity = O(N)
+
+Time Complexity = O(N) 
 Space Complexity = O(N) [prefixSum array]
-```
-  
 
 3.  Where to use prefix-sum?
-    
-
 Prefix sum is used to solve problems where we have to find the sum of elements in the given range from index L to R for multiple queries.
 ```
 For example: 
-Index →       0,  1, 2, 3,  4, 5, 6
+Index →      0,  1, 2, 3,  4, 5, 6
         A = [3, -2, 8, -5, 4, 0, 1]
 prefixSum = [3, 1, 9,  4, 8, 8,  9]
  
@@ -82,7 +72,6 @@ Answer = (A[0] + A[1] + A[2] + A[3] + A[4] + A[5]) - (A[0] + A[1])
 
 ```
   
-
 Therefore, sum of elements in the given range of index L to R =
 -   prefixSum[R] - prefixSum[L - 1]  , if L > 0
 -   prefixSum[R]  , if L == 0
@@ -96,6 +85,7 @@ Calculating sum of elements from index L to R by traveling will take the time co
   
 
 Practice Question: [Equilibrium index of an array](https://www.interviewbit.com/problems/equal/)
+
 
   ## Carry Forward:
 
