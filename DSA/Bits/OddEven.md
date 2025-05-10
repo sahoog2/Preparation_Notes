@@ -1,3 +1,4 @@
+[GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
 ### **Checking Even/Odd Using the Bitwise AND (`&`) Operator** 🚀
 
 In binary, **even numbers always end in `0`**, and **odd numbers always end in `1`**. We can use the **bitwise AND (`&`) operator** to quickly check whether a number is even or odd.
@@ -58,3 +59,5 @@ Since the last bit determines **even or odd**, this method is **faster than usin
 
 -   **Efficiency**: `&` is faster than `%`, especially for large computations.
 -   **Low-Level Optimization**: Used in embedded systems, OS-level programming, and bitwise tricks.
+
+[GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
