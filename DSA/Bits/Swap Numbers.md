@@ -1,4 +1,5 @@
 [GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
+
 Swapping two numbers without using a temporary variable is a **classic bitwise trick** that leverages the **XOR (`^`) operator**.
 
 ### **🚀 Concept**
