@@ -24,3 +24,4 @@ Bitwise operators allow manipulation of individual bits within integers. Common 
 -   **Checking Odd/Even Numbers**: `n & 1` checks if a number is odd (`1`) or even (`0`).
 -   **Fast Multiplication/Division**: `n << 1` effectively multiplies `n` by `2`.
 -   **Permissions and Flags**: Used in settings and configurations to store multiple values compactly.
+-   **Bit Masks for Permissions:** Toggle specific bits for settings.
