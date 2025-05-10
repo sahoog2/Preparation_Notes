@@ -10,7 +10,7 @@ Bitwise operators allow manipulation of individual bits within integers. Common 
 
 | Operator | Symbol | Example | Description|
 |:---:|:---:|:---:|:---:|
-|[AND](#**1.-Bitwise-AND-(`&`)**)|&|5&3|Sets bits to 1 if both operands have 1 in the same position.|
+|AND|&|5&3|Sets bits to 1 if both operands have 1 in the same position.|
 |OR|\||5\|3|Sets bits to 1 if at least one operand has 1.|
 |XOR|^|5^3|Sets bits to 1 if operands differ at that position.|
 |NOT|~|~5|Flips all bits (1s become 0s, and vice versa).|
