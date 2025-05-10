@@ -5,7 +5,7 @@ Bitwise operators are incredibly powerful and efficient for solving a variety of
 ### **1. Basic Number Operations**
 ---
 ✅ [**Checking Even/Odd**](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/OddEven.md): `(n & 1) == 0` → Even, otherwise Odd  
-✅ **Swapping Two Numbers Without Temporary Variable**:
+✅ [**Swapping Two Numbers Without Temporary Variable**](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/Swap%20Numbers.md):
 
 ```java
 a = a ^ b;
