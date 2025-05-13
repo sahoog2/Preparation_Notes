@@ -15,7 +15,7 @@ a = a ^ b;
 ```
 
 ✅ [**Multiplication by Powers of 2**](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/Multiplication%20by%20Powers%20of%202.md): `n << k` → `n * 2^k`  
-✅ **Division by Powers of 2**: `n >> k` → `n / 2^k`  
+✅ [**Division by Powers of 2**](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/Division%20by%20Powers%20of%202.md): `n >> k` → `n / 2^k`  
 ✅ **Checking if a Number is a Power of 2**: `(n & (n - 1)) == 0`
 
 ----------
