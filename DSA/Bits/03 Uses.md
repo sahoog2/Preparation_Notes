@@ -35,7 +35,7 @@ while (n > 0) {
 
 ```
 
-✅ **Fast Exponentiation (Binary Exponentiation)**  
+✅ [**Fast Exponentiation](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/Fast%20Exponentiation.md) (Binary Exponentiation)**  
 ✅ **Reverse Bits of an Integer**
 
 ----------
