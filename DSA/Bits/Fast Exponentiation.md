@@ -55,5 +55,69 @@ Let’s compute `2^10` using **Binary Exponentiation**:
 ✅ **Optimized for cryptography and modular arithmetic (`mod m`).**  
 ✅ **Used in RSA encryption, large number computations, and competitive programming.**  
 
-Would you like more variations such as **Modular Inverse Using Fast Power**? 🚀
+[GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
+
+## **Choosing the Right Modulus (`mod`) for a Problem** 🚀
+
+The **modulus (`mod`) value** in a problem is selected based on the **problem constraints** and the nature of calculations involved. Here’s how to decide:
+
+
+### **📌 General Guidelines for Selecting `mod`**
+
+✅ **Prevent Overflow** → Large calculations need a modulus to keep values manageable.  
+✅ **Prime Numbers (`mod`)** → Common choices in **cryptography** and **number theory**.  
+✅ **Competitive Programming Standards** → Frequently used **mod values** for coding challenges:
+
+-   `10^9 + 7` (`1000000007`) → Large prime, used in modular arithmetic.
+-   `998244353` → Another commonly used prime modulus.
+
+### **🚀 Key Considerations Based on Use Case**
+
+✅ **Cryptography** → Use **large prime numbers** to ensure security (`mod` in RSA).  
+✅ **Number Theory & Modular Arithmetic** → If finding **remainders**, choose `mod` relative to divisor constraints.  
+✅ **Graph & Combinatorics Problems** → Use **prime mod values** for easier modular inverse calculations.  
+✅ **Optimizing Exponentiation** → Select a `mod` that simplifies **`a^b mod m`** using **fast exponentiation**.
+
+----------
+
+### **🔥 Example Scenarios**
+
+1️⃣ **Finding remainders of division**
+
+```math
+A % M = B % M
+
+```
+
+Choose `mod = M`, based on constraints in the problem.
+
+2️⃣ **Solving equations using modular inverse**
+
+```math
+(A / B) % mod = (A * B⁻¹) % mod
+
+```
+
+Choose a **prime modulus** so that `B⁻¹` (modular inverse) exists.
+
+3️⃣ **Reducing large number computations**
+
+```math
+(A * B) % mod
+
+```
+
+Choose `mod = 10^9 + 7` for standard programming problems.
+
+----------
+
+### **💡 Summary**
+| Problem Type | Recommended `mod` |
+|--|--|
+| Large number computations |`10^9 + 7`  |
+|Cryptography (RSA, ECC)|Large **prime numbers** |
+|Graph Algorithms & Combinatorics|`998244353` (large prime)|
+|Basic remainder problems|Given divisor (`M`)|
+
+
 [GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
