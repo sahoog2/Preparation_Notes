@@ -1,3 +1,4 @@
+[GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
 ### **Multiplication by Powers of 2 Using Bit Masking** 🚀  
 
 Multiplying a number by powers of `2` can be done efficiently using **bitwise left shift (`<<`)**, rather than traditional multiplication operations.
@@ -43,4 +44,4 @@ public class BitwiseMultiplication {
 ✅ **Optimized for low-level operations (embedded systems, cryptography).**  
 ✅ **Used in performance-critical applications (image processing, graphics, networking).**  
 
-Would you like a deep dive into bitwise tricks for division and modular arithmetic? 🚀
+[GoBack](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/03%20Uses.md)
