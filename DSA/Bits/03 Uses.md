@@ -22,7 +22,7 @@ a = a ^ b;
 
 ### **2. Bit Manipulation & Optimization**
 
-✅ **Set a Particular Bit**: `num |= (1 << position)`  
+✅ [**Set a Particular Bit**](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Bits/Set%20a%20Particular%20Bit.md): `num |= (1 << position)`  
 ✅ **Clear a Particular Bit**: `num &= ~(1 << position)`  
 ✅ **Toggle a Bit**: `num ^= (1 << position)`  
 ✅ **Counting Set Bits (`Hamming Weight`)**:
