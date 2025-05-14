@@ -114,21 +114,32 @@ Space Complexity : O(1)
 ```java
     public class Solution {
     public int solve(int[] A) {
-        long sum1 = 0;  
-        for(int i = 0; i < A.length ; i++) 
+        long sum1 = 0;  // Stores the total sum of array elements
+        
+        // Calculate the total sum of the array elements
+        for(int i = 0; i < A.length ; i++)  
             sum1 += A[i];
-        long sum2 = 0;  // sum of elements at lower indexes
-        int ans = Integer.MAX_VALUE;
-        for(int i = 0 ; i < A.length ; i++){
-            sum1 -= A[i];   // sum of elements at higher indexes
+
+        long sum2 = 0;  // Tracks sum of elements before the current index
+        int ans = Integer.MAX_VALUE; // Stores the equilibrium index (initialized to MAX_VALUE)
+
+        // Iterate through the array to find the equilibrium index
+        for(int i = 0 ; i < A.length ; i++) {
+            sum1 -= A[i];   // Update sum1 to exclude the current element (sum of elements after index i)
+            
+            // Check if sum of elements on left (`sum2`) equals sum of elements on right (`sum1`)
             if(sum1 == sum2){
-                ans = i;
-                break;
+                ans = i;  // Found equilibrium index, store it
+                break;    // No need to check further, exit loop
             }
-            sum2 += A[i];
+
+            sum2 += A[i]; // Add current element to sum2 (sum of elements before index i)
         }
+
+        // If no equilibrium index is found, return -1
         if(ans == Integer.MAX_VALUE)
-            ans =- 1;   // If no equilibrium index found, then return -1
+            ans = -1;   
+
         return ans;
     }
 }
