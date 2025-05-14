@@ -1,1 +1,150 @@
+#  Special Index
 
+[Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25455/assignment/problems/12828/hints?navref=cl_pb_nv_tb)
+[Solution](#Solution)
+[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+
+**Problem Description**  
+
+Given an array,  **arr[]**  of size  **N**, the task is to find the count of array indices such that removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal.
+
+  
+  
+**Problem Constraints**  
+
+1 <= N <= 105
+-105 <= A[i] <= 105
+Sum of all elements of A <= 109
+
+  
+  
+**Input Format**  
+
+First argument contains an array A of integers of size N
+
+  
+  
+**Output Format**  
+
+Return the count of array indices such that removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal.
+
+  
+  
+**Example Input**  
+
+Input 1:
+
+A = [2, 1, 6, 4]
+
+Input 2:
+
+A = [1, 1, 1]
+
+  
+  
+**Example Output**  
+
+Output 1:
+
+1
+
+Output 2:
+
+3
+
+  
+  
+**Example Explanation**  
+
+Explanation 1:
+
+Removing arr[1] from the array modifies arr[] to { 2, 6, 4 } such that, arr[0] + arr[2] = arr[1]. 
+Therefore, the required output is 1. 
+
+Explanation 2:
+
+Removing arr[0] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
+Removing arr[1] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
+Removing arr[2] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
+Therefore, the required output is 3.
+
+[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+# Solution
+
+[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+
+```java
+public class Solution {
+
+    // Function to count equilibrium indexes in the array
+    private int cntIndexesToMakeBalance(int arr[], int n) {
+        // If array has only one element, it's always an equilibrium index
+        if (n == 1) {
+            return 1;
+        }
+
+        // If the array has only two elements, no equilibrium index can exist
+        if (n == 2)
+            return 0;
+
+        int sumEven = 0; // Stores sum of elements at even indices
+        int sumOdd = 0;  // Stores sum of elements at odd indices
+
+        // Calculate sum of even-indexed and odd-indexed elements
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) { // Even index
+                sumEven += arr[i];
+            } else { // Odd index
+                sumOdd += arr[i];
+            }
+        }
+
+        // Variables to track current sum while iterating
+        int currOdd = 0; 
+        int currEven = arr[0]; // First element is always at an even index
+        int res = 0; // Stores the count of equilibrium indexes
+        int newEvenSum = 0; // Stores recalculated even sum
+        int newOddSum = 0; // Stores recalculated odd sum
+
+        // Iterate through array to check for equilibrium indexes
+        for (int i = 1; i < n - 1; i++) {
+            if (i % 2 == 1) { // Odd index
+                currOdd += arr[i];
+                newEvenSum = currEven + sumOdd - currOdd; // Recalculate sum for even positions
+                newOddSum = currOdd + sumEven - currEven - arr[i]; // Recalculate sum for odd positions
+            } else { // Even index
+                currEven += arr[i];
+                newOddSum = currOdd + sumEven - currEven; // Recalculate sum for odd positions
+                newEvenSum = currEven + sumOdd - currOdd - arr[i]; // Recalculate sum for even positions
+            }
+
+            // If recalculated sums are equal, it's an equilibrium index
+            if (newEvenSum == newOddSum) {
+                res++;
+            }
+        }
+
+        // Special case: Check if the first or last element makes the array balanced
+        if (sumOdd == sumEven - arr[0]) {
+            res++;
+        }
+        if (n % 2 == 1) { // Odd-sized array
+            if (sumOdd == sumEven - arr[n - 1]) {
+                res++;
+            }
+        } else { // Even-sized array
+            if (sumEven == sumOdd - arr[n - 1]) {
+                res++;
+            }
+        }
+
+        return res; // Return total count of equilibrium indexes
+    }
+
+    // Wrapper function that calls the main logic function
+    public int solve(int[] A) {
+        int n = A.length;
+        return cntIndexesToMakeBalance(A, n);
+    }
+}
+```
