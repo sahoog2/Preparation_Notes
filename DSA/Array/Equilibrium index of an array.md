@@ -111,5 +111,28 @@ The idea is to get the total sum of the array first. Then Iterate through the ar
 Time Complexity : O(N)
 Space Complexity : O(1)
 
+```java
+    public class Solution {
+    public int solve(int[] A) {
+        long sum1 = 0;  
+        for(int i = 0; i < A.length ; i++) 
+            sum1 += A[i];
+        long sum2 = 0;  // sum of elements at lower indexes
+        int ans = Integer.MAX_VALUE;
+        for(int i = 0 ; i < A.length ; i++){
+            sum1 -= A[i];   // sum of elements at higher indexes
+            if(sum1 == sum2){
+                ans = i;
+                break;
+            }
+            sum2 += A[i];
+        }
+        if(ans == Integer.MAX_VALUE)
+            ans =- 1;   // If no equilibrium index found, then return -1
+        return ans;
+    }
+}
+```
+
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
