@@ -8,7 +8,7 @@
  6. [Product array puzzle](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Product%20array%20puzzle.md)
  # Carry Forward
  
-  1. Special Subsequences "AG"
+  1. [Special Subsequences "AG"](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Special%20Subsequences%20%22AG%22.md)
   2. Closest MinMax
   3. Bulbs
   4. Amazing Subarrays
