@@ -21,7 +21,7 @@
    3. [Alternating Subarrays Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Alternating%20Subarrays.md)
    4. [Max Sum Contiguous Subarray](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Max%20Sum%20Contiguous%20Subarray.md)
    5. [Sum of All Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Sum%20of%20All%20Subarrays.md)
-   6. Subarray with least average medium
+   6. [Subarray with least average medium](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Subarray%20with%20least%20average%20medium.md)
    7. Maximum Subarray Easy
  # Contribution Technique
  #  2-D Array/Matrix
