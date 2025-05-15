@@ -17,7 +17,7 @@
  # Sliding Window
    (Subarrays class)
    1. [Counting Subarrays Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Counting%20Subarrays.md)
-   2. Good Subarrays Easy
+   2. [Good Subarrays Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Good%20Subarrays.md)
    3. Alternating Subarrays Easy
    4. Max Sum Contiguous Subarray
    5. Sum of All Subarrays
