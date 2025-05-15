@@ -12,7 +12,7 @@
   2. [Closest MinMax](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Closest%20MinMax.md)
   3. [Bulbs](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Bulbs.md)
   4. [Amazing Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Amazing%20Subarrays.md)
-  5. Even Subarrays
+  5. [Even Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Even%20Subarrays.md)
   6. Leaders in an array
  # Sliding Window
  # Contribution Technique
