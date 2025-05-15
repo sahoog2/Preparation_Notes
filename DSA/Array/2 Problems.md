@@ -15,6 +15,14 @@
   5. [Even Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Even%20Subarrays.md)
   6. [Leaders in an array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Leaders%20in%20an%20array.md)
  # Sliding Window
+   (Subarrays class)
+   1. Counting Subarrays Easy
+   2. Good Subarrays Easy
+   3. Alternating Subarrays Easy
+   4. Max Sum Contiguous Subarray
+   5. Sum of All Subarrays
+   6. Subarray with least average medium
+   7. Maximum Subarray Easy
  # Contribution Technique
  #  2-D Array/Matrix
 
