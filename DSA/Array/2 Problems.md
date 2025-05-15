@@ -7,6 +7,13 @@
  5. [Time to equality](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Time%20to%20equality.md)
  6. [Product array puzzle](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Product%20array%20puzzle.md)
  # Carry Forward
+ 
+  1. Special Subsequences "AG"
+  2. Closest MinMax
+  3. Bulbs
+  4. Amazing Subarrays
+  5. Even Subarrays
+  6. Leaders in an array
  # Sliding Window
  # Contribution Technique
  #  2-D Array/Matrix
