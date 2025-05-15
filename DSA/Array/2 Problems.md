@@ -13,7 +13,7 @@
   3. [Bulbs](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Bulbs.md)
   4. [Amazing Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Amazing%20Subarrays.md)
   5. [Even Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Even%20Subarrays.md)
-  6. Leaders in an array
+  6. [Leaders in an array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Leaders%20in%20an%20array.md)
  # Sliding Window
  # Contribution Technique
  #  2-D Array/Matrix
