@@ -9,7 +9,7 @@
  # Carry Forward
  
   1. [Special Subsequences "AG"](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Special%20Subsequences%20%22AG%22.md)
-  2. Closest MinMax
+  2. [Closest MinMax](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Closest%20MinMax.md)
   3. Bulbs
   4. Amazing Subarrays
   5. Even Subarrays
