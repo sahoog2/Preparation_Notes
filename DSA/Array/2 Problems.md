@@ -19,7 +19,7 @@
    1. [Counting Subarrays Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Counting%20Subarrays.md)
    2. [Good Subarrays Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Good%20Subarrays.md)
    3. [Alternating Subarrays Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Alternating%20Subarrays.md)
-   4. Max Sum Contiguous Subarray
+   4. [Max Sum Contiguous Subarray](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Max%20Sum%20Contiguous%20Subarray.md)
    5. Sum of All Subarrays
    6. Subarray with least average medium
    7. Maximum Subarray Easy
