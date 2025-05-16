@@ -130,3 +130,6 @@ public class Solution {
     }
 }
 ```
+
+[Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25458/assignment/problems/1247/hints?navref=cl_pb_nv_tb)
+[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
