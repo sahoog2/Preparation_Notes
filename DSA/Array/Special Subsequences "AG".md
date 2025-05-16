@@ -106,6 +106,27 @@ Time complexity : O(n)
 Space complexity : O(1)
 
 ```java
+My Solution:
+public class Solution {
+    public int solve(String A) {
+        int n = A.length();
+        int ans = 0;
+        int mod = 1000000007;
+        int a = 0;
+        for(int i=0;i<n;i++){
+            if(A.charAt(i)=='A'){
+                a++;
+            }
+            if(A.charAt(i)=='G'){
+                ans = (ans+a)%mod;
+            }
+        }
+
+        return ans;
+    }
+}
+
+Solution 1:
 public class Solution {
     public int solve(String A) {
         int n = A.length(), ans = 0, MOD = 1000*1000*1000 + 7;
