@@ -54,9 +54,6 @@ We can change the array A = [4, 4, 4, 4, 4]. The time required will be 8 seconds
   
   
 
-Expected Output
-
-Provide sample input and click run to see the correct output for the provided input. Use this to improve your problem understanding and test edge cases
 
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25455/homework/problems/9003/hints?navref=cl_pb_nv_tb)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
