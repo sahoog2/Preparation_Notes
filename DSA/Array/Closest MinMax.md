@@ -77,32 +77,133 @@ In order to find the start point, we can simply remember the last occurrences of
 **Time Complexity : O(n)**  
 **Space Complexity(extra) : O(1)**
 
+```java
+    for(int i=0;i<A.length;i++){
+        if(A[i]<=min_val){
+            min_idex = i;
+            min_val = A[i];
+        }
+        if(A[i]>=max_val){
+            max_index =i;
+            max_val = A[i];
+        }
+        ans = Math.min(ans, Math.abs(max_index-min_idex));
+    }
+
+    return ans;
+}
 ```
+
+### **Logical Error in the Given Solution**
+The **mistake** in the current approach is that it **does not correctly track the latest occurrences** of the **minimum and maximum values** in the array while iterating. This leads to **incorrect results** when the min/max values appear multiple times.
+
+#### **🚨 Error Explanation**
+- The variables `min_index` and `max_index` are **updated only when a new min/max value appears**.
+- However, this incorrectly ignores **previous occurrences of min/max** that could form a smaller subarray.
+- `ans` is updated on **every iteration**, even when one of the values is not found **after** the other.
+
+---
+
+### **❌ Counterexample Where It Fails**
+Consider the array:
+```java
+A = [1, 3, 2, 1, 3, 3, 1]
+```
+- **Min value:** `1`
+- **Max value:** `3`
+- Correct answer should be `2` (`[3, 1]` at indices `4,5`).
+- **Incorrect output:** The function incorrectly updates `min_index` when encountering `1` later, missing a smaller subarray.
+
+---
+
+### **✅ Corrected Approach**
+We should **track** both the latest occurrence of `min` and `max` as we iterate, ensuring we always have the shortest subarray.
+
+```java
 public class Solution {
     public int solve(int[] A) {
-        
-        int min_ele = Integer.MAX_VALUE, max_ele = Integer.MIN_VALUE;   // min and max value of the array
-        int min_Index = -1, max_Index = -1; // index of the last element having value equal to min_ele and max_ele
-        
-        int ans = Integer.MAX_VALUE;
-        for(int x:A){
-            min_ele = Math.min(min_ele, x);
-            max_ele = Math.max(max_ele, x);
+        int min_val = Integer.MAX_VALUE;
+        int max_val = Integer.MIN_VALUE;
+
+        // Find actual min and max values first
+        for (int num : A) {
+            min_val = Math.min(min_val, num);
+            max_val = Math.max(max_val, num);
         }
-        
-        for(int i=0 ; i<A.length ; i++){
-            if(A[i] == min_ele) min_Index = Math.max(min_Index, i);
-            if(A[i] == max_ele) max_Index = Math.max(max_Index, i);
-            
-            if(min_Index != -1 && max_Index != -1){
-                int len = Math.abs(max_Index - min_Index) + 1;
-                ans = Math.min(ans, len);
+
+        int min_index = -1, max_index = -1;
+        int ans = Integer.MAX_VALUE;
+
+        // Iterate and track closest min-max occurrences
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] == min_val) {
+                min_index = i;
+                if (max_index != -1) { // Ensure max exists before
+                    ans = Math.min(ans, i - max_index + 1);
+                }
+            }
+            if (A[i] == max_val) {
+                max_index = i;
+                if (min_index != -1) { // Ensure min exists before
+                    ans = Math.min(ans, i - min_index + 1);
+                }
             }
         }
-        
         return ans;
     }
 }
 ```
+
+---
+
+### **🔥 Why This Works?**
+✅ First **identify min and max values** in the array.  
+✅ Track the **latest occurrence** of both min and max values.  
+✅ Ensure that when updating `ans`, **both values have been seen** before updating.  
+
+This fixes the **incorrect tracking** issue in the original solution and guarantees **the smallest valid subarray**. 🚀  
+
+🚀 Edge Cases to Consider
+1️⃣ All elements are the same
+A = [5, 5, 5, 5]
+
+
+- Expected Output: 1
+- Explanation: The smallest subarray that contains both min and max is any single element since min == max.
+2️⃣ Min and max occur at extreme ends
+A = [3, 2, 4, 1]
+
+
+- Min: 1, Max: 4
+- Expected Output: 4
+- Explanation: Only one valid subarray [3, 2, 4, 1] since min and max are far apart.
+3️⃣ Multiple occurrences of min and max scattered
+A = [2, 3, 2, 4, 3, 4, 2]
+
+
+- Min: 2, Max: 4
+- Expected Output: 2
+- Explanation: [4, 2] (indices 5 and 6) is the smallest valid subarray.
+4️⃣ Min and max occur at consecutive indices
+A = [1, 4, 2, 3, 1, 4, 5]
+
+
+- Min: 1, Max: 5
+- Expected Output: 2
+- Explanation: [1, 5] (indices 4 and 6) is the shortest subarray.
+5️⃣ Edge Case: Only two elements
+A = [3, 1]
+
+
+- Expected Output: 2
+- Explanation: Since both min and max exist in the entire array, the only possible subarray is the full array.
+6️⃣ Edge Case: Min appears after max
+A = [5, 2, 2, 5, 3, 2, 4, 5]
+
+
+- Min: 2, Max: 5
+- Expected Output: 2
+- Explanation: [5, 2] (indices 3 and 4) is the shortest subarray.
+
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
