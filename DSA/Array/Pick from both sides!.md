@@ -102,6 +102,55 @@ where N is number of elements in array A
 Bonus: Try solving it in O(1) space.
 
 ```java
+Method 0:
+public class Solution {
+    public int solve(int[] A, int B) {
+        int n = A.length;
+        int[] pa = new int[n];
+        int[] sa = new int[n+1];
+        int sum = 0;
+
+        pa[0] = A[0];
+        sa[n] = 0;
+
+        for(int i=1;i<n;i++){
+            pa[i] = pa[i-1]+A[i];
+        }
+
+        for(int i=n-1;i>=0;i--){
+            sa[i] = sa[i+1]+A[i];
+        }
+
+        if(B==0){
+            return sum;
+        }
+
+        sum = pa[B-1];
+        if(sa[n-B]>sum){
+            sum = sa[n-B];
+        }
+
+        //int tmp_sum = Integer.MIN_VALUE;
+
+        for(int i=1;i<B;i++){
+            //sum = Math.max(sum, pa[i-1] + sa[n-B+i]);
+            int tmp_sum = pa[i-1] + sa[n-B+i];
+            if(tmp_sum>sum){
+                sum=tmp_sum;
+                
+            }
+
+            tmp_sum=Integer.MIN_VALUE;
+            
+        }
+
+        return sum;
+
+        
+    }
+}
+
+
 Method 1:
 
 public class Solution {
