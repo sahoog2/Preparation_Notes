@@ -78,6 +78,8 @@ In order to find the start point, we can simply remember the last occurrences of
 **Space Complexity(extra) : O(1)**
 
 ```java
+My incorrect Solution :
+
     for(int i=0;i<A.length;i++){
         if(A[i]<=min_val){
             min_idex = i;
