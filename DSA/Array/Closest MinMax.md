@@ -95,6 +95,7 @@ My incorrect Solution :
     return ans;
 }
 ```
+[Corrected Approach](###Corrected Approach)
 
 ### **Logical Error in the Given Solution**
 The **mistake** in the current approach is that it **does not correctly track the latest occurrences** of the **minimum and maximum values** in the array while iterating. This leads to **incorrect results** when the min/max values appear multiple times.
