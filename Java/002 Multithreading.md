@@ -1,4 +1,4 @@
-# **Multithreading in Java & The `Thread` Class**
+# **Multithreading in Java
 
 #### **What is Multithreading?**
 
@@ -17,84 +17,40 @@ Multithreading is the ability of a program to execute multiple threads **simulta
 ✔ **Better Resource Sharing** – Threads share memory space, reducing overhead.
 
 ----------
-
-### **Java `Thread` Class**
-
-The `Thread` class is Java’s built-in way to create and manage threads.
-
-#### **1️⃣ Creating a Thread by Extending `Thread` Class**
-
-```java
-class MyThread extends Thread {
-    @Override
-    public void run() {
-        System.out.println("Thread running: " + Thread.currentThread().getName());
-    }
-}
-
-public class ThreadExample {
-    public static void main(String[] args) {
-        MyThread thread1 = new MyThread();
-        MyThread thread2 = new MyThread();
-
-        thread1.start();  // Starts thread execution
-        thread2.start();
-    }
-}
-
-```
-
-🛠 **Key Points**
-
--   `start()` creates a new thread.
--   `run()` contains the execution logic.
--   Threads execute **asynchronously**, meaning output order may vary.
-
-----------
+# Runnable vs Callable
+# Implementing Runnable using Thread
+Below is a **concrete example** of using a `Thread` to execute a `Runnable` task in Java.
 
 
-### **Thread Lifecycle**
+### **✅ Example: Running a Task Using `Runnable` with `Thread`**
 
-Threads go through several states during execution:
-
-1.  **New** – Created but not started.
-2.  **Runnable** – Ready to run, waiting for CPU allocation.
-3.  **Running** – Actively executing.
-4.  **Blocked/Waiting** – Paused due to synchronization or waiting for resources.
-5.  **Terminated** – Execution completed.
-
-----------
-
-
-### **✅ Example: Creating Threads Using `Thread` Class**
-
-This example **simulates downloading files** using multiple threads.
+This example **simulates processing multiple payment transactions** using `Runnable`.
 
 ```java
-class DownloadTask extends Thread {
-    private String fileName;
+class PaymentProcessor implements Runnable {
+    private String transactionId;
 
-    public DownloadTask(String fileName) {
-        this.fileName = fileName;
+    public PaymentProcessor(String transactionId) {
+        this.transactionId = transactionId;
     }
 
     @Override
     public void run() {
-        System.out.println("Downloading " + fileName + " by " + Thread.currentThread().getName());
+        System.out.println("Processing transaction: " + transactionId + " - Thread: " + Thread.currentThread().getName());
         try {
-            Thread.sleep(2000); // Simulating download time
+            Thread.sleep(2000); // Simulating transaction delay
         } catch (InterruptedException e) {
-            System.out.println("Download interrupted for " + fileName);
+            System.out.println("Transaction interrupted for: " + transactionId);
         }
-        System.out.println("Download completed: " + fileName);
+        System.out.println("Transaction completed: " + transactionId);
     }
 }
 
-public class ThreadExample {
+public class RunnableThreadExample {
     public static void main(String[] args) {
-        DownloadTask thread1 = new DownloadTask("File1.pdf");
-        DownloadTask thread2 = new DownloadTask("File2.jpg");
-        DownloadTask thread3 = new DownloadTask("File3.mp4");
+        Thread thread1 = new Thread(new PaymentProcessor("TXN001"));
+        Thread thread2 = new Thread(new PaymentProcessor("TXN002"));
+        Thread thread3 = new Thread(new PaymentProcessor("TXN003"));
 
         thread1.start();
         thread2.start();
@@ -108,62 +64,61 @@ public class ThreadExample {
 
 ### **🛠 Explanation**
 
-✔ **Extending `Thread` Class:** We define a custom thread by extending `Thread`.  
-✔ **Overriding `run()` Method:** Logic inside `run()` executes when the thread starts.  
-✔ **Using `start()` Method:** Starts each thread asynchronously.  
-✔ **`Thread.sleep(2000)` Simulates Work:** The thread pauses for 2 seconds to mimic processing.  
-✔ **`Thread.currentThread().getName()` Identifies Threads:** Useful for debugging.
+✔ **Uses `Runnable` for Task Definition** – `PaymentProcessor` implements `Runnable`.  
+✔ **Passes `Runnable` to `Thread` Constructor** – Creates threads dynamically.  
+✔ **Executes Tasks Concurrently (`start()`)** – Multiple transactions processed in parallel.  
+✔ **Simulates Processing Delay (`Thread.sleep(2000)`)** – Adds realism to execution time.  
+✔ **Uses `Thread.currentThread().getName()`** – Helps track which thread is executing the task.
 
 ----------
 
-### **🛠 Sample Output**
+### **🛠 Expected Output (Order may vary due to concurrency)**
 
 ```
-Downloading File1.pdf by Thread-0
-Downloading File2.jpg by Thread-1
-Downloading File3.mp4 by Thread-2
-Download completed: File1.pdf
-Download completed: File2.jpg
-Download completed: File3.mp4
+Processing transaction: TXN001 - Thread: Thread-0
+Processing transaction: TXN002 - Thread: Thread-1
+Processing transaction: TXN003 - Thread: Thread-2
+Transaction completed: TXN001
+Transaction completed: TXN002
+Transaction completed: TXN003
 
 ```
 
-# **Multithreading Using `Executor` – Concrete Example**
+🔹 **Each transaction is handled by a separate thread**, demonstrating multithreading with `Runnable`.
 
-In Java, the `Executor` framework allows efficient **thread management** without manually creating and starting threads. This improves performance and scalability.
+# Implementing Runnable using Executor
+Below is a **concrete example** of using `Executor` to execute `Runnable` tasks efficiently in Java.
 
-----------
 
-### **✅ Example: Using `Executor` for Multithreading**
+### **✅ Example: Using `Executor` to Process Tasks in Parallel**
 
-This example **simulates processing multiple database queries** using an `Executor`.
+This example **simulates logging multiple user actions using an `Executor`**.
 
 ```java
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-class DatabaseTask implements Runnable {
-    private String query;
+class UserActionLogger implements Runnable {
+    private String action;
 
-    public DatabaseTask(String query) {
-        this.query = query;
+    public UserActionLogger(String action) {
+        this.action = action;
     }
 
     @Override
     public void run() {
-        System.out.println("Executing query: " + query + " by " + Thread.currentThread().getName());
+        System.out.println("Logging action: " + action + " - Thread: " + Thread.currentThread().getName());
     }
 }
 
-public class ExecutorExample {
+public class ExecutorRunnableExample {
     public static void main(String[] args) {
-        Executor executor = Executors.newFixedThreadPool(3); // Creates a thread pool of 3 threads
-        
-        executor.execute(new DatabaseTask("SELECT * FROM users"));
-        executor.execute(new DatabaseTask("DELETE FROM logs"));
-        executor.execute(new DatabaseTask("UPDATE accounts SET balance = balance + 100"));
-        
-        executor.execute(new DatabaseTask("INSERT INTO transactions VALUES ('TX123', 5000)"));
+        Executor executor = Executors.newFixedThreadPool(3); // Creates a pool with 3 threads
+
+        executor.execute(new UserActionLogger("Login"));
+        executor.execute(new UserActionLogger("File Upload"));
+        executor.execute(new UserActionLogger("Logout"));
+        executor.execute(new UserActionLogger("Profile Update"));
     }
 }
 
@@ -173,53 +128,56 @@ public class ExecutorExample {
 
 ### **🛠 Explanation**
 
-✔ **Using `Executor`** – Defines a fixed-size thread pool.  
-✔ **Avoids Manual Thread Management** – No need for `new Thread()`.  
-✔ **`execute()` Method** – Efficiently runs tasks asynchronously.  
-✔ **Thread Pooling** – Reuses threads to execute tasks faster.
+✔ **Uses `Executor` to manage threads efficiently.**  
+✔ **Creates a thread pool (`Executors.newFixedThreadPool(3)`)** – Reuses threads instead of creating new ones each time.  
+✔ **Submits tasks using `execute()`** – Executes `Runnable` without manual thread handling.  
+✔ **Identifies executing thread (`Thread.currentThread().getName()`)** – Useful for debugging.
 
-🛠 **Expected Output** (Order may vary due to concurrency):
+----------
+
+### **🛠 Expected Output**
 
 ```
-Executing query: SELECT * FROM users by pool-1-thread-1
-Executing query: DELETE FROM logs by pool-1-thread-2
-Executing query: UPDATE accounts SET balance = balance + 100 by pool-1-thread-3
-Executing query: INSERT INTO transactions VALUES ('TX123', 5000) by pool-1-thread-1
+Logging action: Login - Thread: pool-1-thread-1
+Logging action: File Upload - Thread: pool-1-thread-2
+Logging action: Logout - Thread: pool-1-thread-3
+Logging action: Profile Update - Thread: pool-1-thread-1
 
 ```
 
-----------
+🔹 **Threads are reused** across tasks for efficiency.
 
-Great! Let's dive into **ExecutorService**, which provides advanced thread management in Java.
+# Implementing Runnable using ExecutorService
+### **Concrete Example: Using `ExecutorService` for Running `Runnable` Tasks**
 
-----------
-# **Multithreading Using `ExecutorService` 
-### **What is `ExecutorService`?**
-
-`ExecutorService` is an enhanced version of `Executor` that: ✔ Allows **efficient execution of multiple tasks** using thread pools.  
-✔ Supports **task submission and lifecycle management** (start, shutdown).  
-✔ Enables **control over thread execution**, unlike basic `Executor`.
+`ExecutorService` is an advanced thread management framework in Java that helps execute multiple tasks efficiently using thread pools.
 
 ----------
 
-### **✅ Example: Using `ExecutorService` for Thread Pool Management**
+### **✅ Example: Processing Multiple File Uploads Using `ExecutorService`**
 
-This example **simulates processing multiple transactions** using `ExecutorService`.
+This example **simulates multiple file uploads being handled concurrently**.
 
 ```java
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-class TransactionTask implements Runnable {
-    private String transactionId;
+class FileUploader implements Runnable {
+    private String fileName;
 
-    public TransactionTask(String transactionId) {
-        this.transactionId = transactionId;
+    public FileUploader(String fileName) {
+        this.fileName = fileName;
     }
 
     @Override
     public void run() {
-        System.out.println("Processing transaction: " + transactionId + " by " + Thread.currentThread().getName());
+        System.out.println("Uploading file: " + fileName + " - Thread: " + Thread.currentThread().getName());
+        try {
+            Thread.sleep(2000); // Simulating file upload delay
+        } catch (InterruptedException e) {
+            System.out.println("Upload interrupted for: " + fileName);
+        }
+        System.out.println("Upload completed: " + fileName);
     }
 }
 
@@ -227,9 +185,10 @@ public class ExecutorServiceExample {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(3); // Creates a pool with 3 threads
 
-        for (int i = 1; i <= 5; i++) {
-            executorService.submit(new TransactionTask("TX" + i));
-        }
+        executorService.execute(new FileUploader("document.pdf"));
+        executorService.execute(new FileUploader("video.mp4"));
+        executorService.execute(new FileUploader("image.jpg"));
+        executorService.execute(new FileUploader("audio.mp3"));
 
         executorService.shutdown(); // Gracefully shuts down the thread pool
     }
@@ -241,44 +200,37 @@ public class ExecutorServiceExample {
 
 ### **🛠 Explanation**
 
-✔ **Fixed Thread Pool (`Executors.newFixedThreadPool(3)`)** – Uses 3 threads for execution.  
-✔ **Task Submission (`submit()`)** – Adds multiple transactions for processing.  
-✔ **Graceful Shutdown (`shutdown()`)** – Ensures proper resource cleanup.
+✔ **Uses `ExecutorService` for Efficient Thread Management** – Avoids manual thread handling.  
+✔ **Creates a Fixed Thread Pool (`Executors.newFixedThreadPool(3)`)** – Allows **3 threads** to run at a time.  
+✔ **Executes `Runnable` Tasks Using `execute()`** – Runs tasks asynchronously.  
+✔ **Uses `shutdown()`** – Ensures proper cleanup after execution.
 
 ----------
 
-### **🛠 Sample Output**
+### **🛠 Expected Output (Order may vary due to concurrency)**
 
 ```
-Processing transaction: TX1 by pool-1-thread-1
-Processing transaction: TX2 by pool-1-thread-2
-Processing transaction: TX3 by pool-1-thread-3
-Processing transaction: TX4 by pool-1-thread-1
-Processing transaction: TX5 by pool-1-thread-2
+Uploading file: document.pdf - Thread: pool-1-thread-1
+Uploading file: video.mp4 - Thread: pool-1-thread-2
+Uploading file: image.jpg - Thread: pool-1-thread-3
+Uploading file: audio.mp3 - Thread: pool-1-thread-1
+Upload completed: document.pdf
+Upload completed: video.mp4
+Upload completed: image.jpg
+Upload completed: audio.mp3
 
 ```
 
-🔹 **Thread pool reuses existing threads**, avoiding excessive creation overhead.
+🔹 **Threads are reused**, improving efficiency.
+Awesome! Let's dive into **`Callable` & `Future`**, which allow threads to return results asynchronously.
 
 ----------
-
-### **✅ Advanced Control: `shutdown()` vs. `shutdownNow()`**
-
-```java
-executorService.shutdown(); // Waits for tasks to finish before shutting down
-executorService.shutdownNow(); // Immediately stops active tasks
-
-```
-
-Great choice! Let's dive into **`Callable` and `Future`**, which allow threads to return results asynchronously.
-
-----------
-# **Multithreading Using Callable
+# Implementing multithreading using Callable
 ### **✅ What is `Callable`?**
 
-Unlike `Runnable`, `Callable<T>`: ✔ Can **return a value** from a thread.  
-✔ Can **throw checked exceptions**.  
-✔ Works with `Future<T>` for **asynchronous processing**.
+Unlike `Runnable`, `Callable<T>`: ✔ **Returns a value** from a thread.  
+✔ **Throws checked exceptions**.  
+✔ **Works with `Future<T>`** for **asynchronous result retrieval**.
 
 🔹 **Key difference between `Runnable` and `Callable`:**
 
@@ -361,3 +313,192 @@ Result: User details for ID: 12345
 🔹 The program **does not block** while the task executes—enhancing efficiency.
 
 ----------
+
+# `CompletableFuture` for Advanced Asynchronous Programming.
+
+Let's explore **`CompletableFuture`**, which enables **fully asynchronous programming** in Java.
+
+----------
+
+### **✅ What is `CompletableFuture`?**
+
+`CompletableFuture<T>` extends `Future<T>` and provides: ✔ **Non-blocking execution** – Unlike `Future.get()`, which blocks execution.  
+✔ **Chaining operations** – Supports multiple asynchronous steps (`thenApply`, `thenAccept`).  
+✔ **Error handling** – Provides mechanisms like `exceptionally()` and `handle()`.
+
+----------
+
+### **✅ Example: Using `CompletableFuture` for Asynchronous Execution**
+
+This example **simulates fetching user details asynchronously without blocking the main thread**.
+
+```java
+import java.util.concurrent.CompletableFuture;
+
+public class CompletableFutureExample {
+    public static void main(String[] args) {
+        System.out.println("Fetching user asynchronously...");
+
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(2000); // Simulating database fetch delay
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "User details for ID: 12345";
+        });
+
+        future.thenAccept(result -> System.out.println("Result: " + result));
+
+        System.out.println("Main thread continues executing...");
+        
+        future.join(); // Waits for result without blocking other operations
+    }
+}
+
+```
+
+----------
+
+### **🛠 Explanation**
+
+✔ **Uses `supplyAsync()` to Fetch Data Asynchronously** – Executes in a separate thread.  
+✔ **Attaches `thenAccept()` for Non-blocking Callbacks** – Processes result once available.  
+✔ **Main Thread Continues Execution** – Avoids blocking while waiting for data.  
+✔ **Uses `join()` for Graceful Completion** – Ensures cleanup without blocking execution.
+
+----------
+
+### **🛠 Expected Output**
+
+```
+Fetching user asynchronously...
+Main thread continues executing...
+(Result appears after 2 seconds)
+Result: User details for ID: 12345
+
+```
+
+🔹 Unlike `Future.get()`, `CompletableFuture` **does not block** execution.
+
+----------
+
+# ✅  `thenCombine()` and `exceptionally()` for Advanced Chaining and Error Handling
+
+
+### **✅ Using `thenCombine()` to Combine Multiple Async Tasks**
+
+When you need to **combine results from two independent async tasks**, `thenCombine()` is ideal.
+
+```java
+import java.util.concurrent.CompletableFuture;
+
+public class CompletableFutureCombineExample {
+    public static void main(String[] args) {
+        CompletableFuture<Integer> future1 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Fetching product price...");
+            return 200;
+        });
+
+        CompletableFuture<Integer> future2 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Fetching delivery charges...");
+            return 50;
+        });
+
+        CompletableFuture<Integer> finalPrice = future1.thenCombine(future2, (price, delivery) -> price + delivery);
+
+        System.out.println("Total Price: " + finalPrice.join());
+    }
+}
+
+```
+
+🛠 **Expected Output:**
+
+```
+Fetching product price...
+Fetching delivery charges...
+Total Price: 250
+
+```
+
+✔ **Executes tasks asynchronously**.  
+✔ **Combines results when both tasks complete**.
+
+----------
+
+### **✅ Using `exceptionally()` for Error Handling**
+
+`exceptionally()` helps **gracefully handle errors** and provide fallback values.
+
+```java
+import java.util.concurrent.CompletableFuture;
+
+public class CompletableFutureExceptionHandling {
+    public static void main(String[] args) {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            if (Math.random() > 0.5) throw new RuntimeException("Error fetching data!");
+            return "Fetched user details";
+        }).exceptionally(ex -> "Fallback data due to error");
+
+        System.out.println("Result: " + future.join());
+    }
+}
+
+```
+
+✔ **Handles runtime exceptions elegantly**.  
+✔ **Provides fallback data instead of crashing**.
+
+
+#  **`thenCompose()`**, which is used when one asynchronous task depends on another.
+
+----------
+
+### **✅ What is `thenCompose()`?**
+
+✔ **Chains dependent async calls** – Similar to flat-mapping in functional programming.  
+✔ **Prevents nested `CompletableFuture` instances** – Returns a single `CompletableFuture<T>`.  
+✔ **Useful for scenarios where one async task requires another's result**.
+
+----------
+
+### **✅ Example: Fetching User Data and Then Their Orders**
+
+This example **first fetches user details, then fetches their order history asynchronously**.
+
+```java
+import java.util.concurrent.CompletableFuture;
+
+public class CompletableFutureComposeExample {
+    public static CompletableFuture<String> getUserData(String userId) {
+        return CompletableFuture.supplyAsync(() -> "User: " + userId);
+    }
+
+    public static CompletableFuture<String> getOrdersForUser(String user) {
+        return CompletableFuture.supplyAsync(() -> "Orders for " + user + " → [Order1, Order2, Order3]");
+    }
+
+    public static void main(String[] args) {
+        CompletableFuture<String> future = getUserData("12345")
+            .thenCompose(user -> getOrdersForUser(user)); // Uses the user's data to fetch their orders
+
+        System.out.println("Fetching user orders...");
+        System.out.println("Result: " + future.join());
+    }
+}
+
+```
+
+----------
+
+### **🛠 Expected Output**
+
+```
+Fetching user orders...
+Result: Orders for User: 12345 → [Order1, Order2, Order3]
+
+```
+
+✔ **Avoids unnecessary nesting (`thenApply()` would return `CompletableFuture<CompletableFuture<T>>`).**  
+✔ **Ensures proper chaining when one async task depends on another.**
