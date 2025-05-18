@@ -18,6 +18,84 @@ Multithreading is the ability of a program to execute multiple threads **simulta
 
 ----------
 # Runnable vs Callable
+
+### **Runnable vs. Callable in Java**
+
+Both `Runnable` and `Callable` are **functional interfaces** used in Java for multithreading. However, they serve **different purposes**.
+
+----------
+
+### **✅ Key Differences**
+
+| Feature | Runnable |Callable
+|--|--|--|
+| **Return Value** |**Does not return a result** (`void run()`)  |**Returns a result** (`T call()`)
+|**Checked Exceptions**|**Cannot throw checked exceptions**|**Can throw checked exceptions**
+|**Use Case**|When you need a task **without a return value**|When you need a task **with a return value**
+|**Integration**|Works with `Thread` & `Executor`|Works with `ExecutorService`
+
+----------
+
+### **✅ Example 1: `Runnable` (No Return Value)**
+
+```java
+class PrintTask implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Executing Runnable in thread: " + Thread.currentThread().getName());
+    }
+}
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        Thread thread = new Thread(new PrintTask());
+        thread.start();
+    }
+}
+
+```
+
+✔ **Best for executing tasks that don't require a return value**.
+
+----------
+
+### **✅ Example 2: `Callable` (Returns a Value)**
+
+```java
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class TaskWithResult implements Callable<String> {
+    @Override
+    public String call() {
+        return "Task completed by " + Thread.currentThread().getName();
+    }
+}
+
+public class CallableExample {
+    public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        Future<String> future = executor.submit(new TaskWithResult());
+
+        System.out.println("Result: " + future.get()); // Retrieves the result
+        executor.shutdown();
+    }
+}
+
+```
+
+✔ **Best for executing tasks that require a return value**.  
+✔ **Uses `Future` to retrieve the result asynchronously**.
+
+----------
+
+### **🚀 When to Use `Runnable` vs. `Callable`?**
+
+-   **Use `Runnable`** when the task **doesn't need a return value** (e.g., logging, sending notifications).
+-   **Use `Callable`** when the task **needs to return a result** (e.g., fetching data from a database).
+
 # Implementing Runnable using Thread
 Below is a **concrete example** of using a `Thread` to execute a `Runnable` task in Java.
 
