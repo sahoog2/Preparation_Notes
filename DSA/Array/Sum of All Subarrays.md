@@ -1,7 +1,7 @@
 # Sum of All Subarrays
 
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/assignment/problems/14363/hints?navref=cl_pb_nv_tb)
-[Solution](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Product%20array%20puzzle.md#Solution)  
+[Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 
 
