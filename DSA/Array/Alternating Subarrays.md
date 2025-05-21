@@ -91,30 +91,51 @@ If the condition is true, then we will append to a list that we will return.
 Refer to the complete solution for more implementation details.
 
 ```java
-class Solution {
+import java.util.*;
+
+public class Solution {
     public int[] solve(int[] A, int B) {
-        ArrayList < Integer > l1 = new ArrayList < > ();
-        int n = A.length;
-        int len = 2 * B + 1;
+        ArrayList<Integer> ans = new ArrayList<>(); // Stores valid center indices
+        int len = 2 * B + 1; // Required length of alternating subarray
+        int n = A.length; // Length of input array
+
+        // Iterate through all possible starting positions of the subarray
         for (int i = 0; i < n - len + 1; i++) {
-            int curr = -1;
-            int flag = 1;
+            int prev = -1; // Variable to store previous element
+            int flag = 1; // Flag to check if the subarray is alternating
+            
+            // Check if subarray from index i to i+len is alternating
             for (int j = i; j < i + len; j++) {
-                if (A[j] == curr) {
-                    flag = 0;
-                    break;
+                if (A[j] == prev) { // If two adjacent elements are the same, it's not alternating
+                    flag = 0; // Set flag to false
+                    break; // Exit loop early
                 }
-                curr = A[j];
+                prev = A[j]; // Update previous element
             }
+            
+            // If valid, add the center index (i + B) to the result list
             if (flag == 1) {
-                l1.add(i + B);
+                ans.add(i + B);
             }
         }
-        int[] ret = new int[l1.size()];
-        for (int i = 0; i < l1.size(); i++) {
-            ret[i] = l1.get(i);
+
+        // Convert ArrayList to an integer array for the final result
+        int[] an = new int[ans.size()];
+        for (int i = 0; i < ans.size(); i++) {
+            an[i] = ans.get(i);
         }
-        return ret;
+
+        return an; // Return the list of valid center indices
+    }
+
+    public static void main(String[] args) {
+        int[] A = {1, 0, 1, 0, 1, 1}; // Sample input
+        int B = 2; // Length factor
+
+        Solution sol = new Solution();
+        int[] centers = sol.solve(A, B);
+
+        System.out.println("Valid Centers: " + Arrays.toString(centers)); // Output expected: [2]
     }
 }
 ```
