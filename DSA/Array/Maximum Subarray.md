@@ -88,42 +88,122 @@ Hence, the answer is 0.
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/assignment/problems/16121/hints?navref=cl_pb_nv_tb)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 # Solution
-The most basic brute force approach would be to find the sum of every subarray and check if it less than B,
-we will put it in a variable which will store the maximum value less than B.
-The time complexity of this approach would be O(N ^ 3).
+####  Brute Force Solution Explanation
 
-But, for the given constraints, the best we can do is O(N ^ 2).
-We can do this easily just by modifying the way we iterate through the loop.
+The brute-force approach involves **checking all possible subarrays** and finding the one with the **maximum sum** while ensuring the sum **does not exceed B**
 
-We will use the following pseudocode:
- `ans = 0
-for(start = 0, start < size; start += 1)
-    sum = 0
-    for(end = start; end < size; end += 1)
-        sum += array[end]
-        if(sum <= MaximumValue)
-            ans = max(sum, ans)
-        else
-            break` 
-Using this, we are checking the sum of every subarray but this method is faster.
+#####  Approach
 
-Refer to the complete solution for more details.
+1️⃣ Iterate through all **possible starting indices** in the array.  
+2️⃣ Iterate through all **possible ending indices** for each start index to form subarrays.  
+3️⃣ Calculate the sum for each subarray and **track the maximum valid sum** (≤ B).
+
+Since we check **all possible subarrays**, this approach has a **time complexity of O(N²)**.
+
+----------
+
+##### Brute Force Java Implementation
 
 ```java
-class Solution {
-    public int maxSubarray(int A, int B, int[] C) {
-        int ans = 0;
-        for (int i = 0; i < A; i++) {
+public class Solution {
+    public int maxSubarraySum(int[] C, int B) {
+        int n = C.length;
+        int maxSum = 0;
+
+        // Try all possible subarrays
+        for (int i = 0; i < n; i++) {
             int sum = 0;
-            for (int j = i; j < A; j++) {
-                sum += C[j];
-                if (sum <= B)
-                    ans = Math.max(ans, sum);
-                else break;
+            
+            for (int j = i; j < n; j++) {
+                sum += C[j]; // Extend subarray to include C[j]
+
+                if (sum <= B) { // Ensure sum does not exceed B
+                    maxSum = Math.max(maxSum, sum);
+                } else {
+                    break; // Stop further additions if sum exceeds B
+                }
             }
         }
-        return ans;
+        
+        return maxSum;
+    }
+
+    public static void main(String[] args) {
+        int[] C = {3, 2, 5, 8, 1}; // Sample input
+        int B = 10; // Maximum allowed sum
+
+        Solution sol = new Solution();
+        System.out.println("Max Subarray Sum: " + sol.maxSubarraySum(C, B)); 
+        // Expected Output: 10 (e.g., subarray [3,2,5] or [8,1])
     }
 }
+
 ```
+
+----------
+
+##### **🚀 Complexity Analysis**
+
+✅ **O(N²) Time Complexity** → Iterating over all possible subarrays.  
+✅ **O(1) Space Complexity** → Uses only a few variables.
+
+####  Optimized Solution Using Sliding Window (O(N) Complexity)
+
+Instead of checking **all subarrays**, we can use a **Sliding Window** approach to efficiently find the maximum sum without exceeding B
+
+##### Approach
+
+✅ Maintain a **window with a valid sum** (≤ B).  
+✅ **Expand right** to include elements.  
+✅ If sum **exceeds B**, **shrink the left** side until it's valid again.  
+✅ Track the maximum valid sum encountered.
+
+
+##### Java Implementation
+
+```java
+public class Solution {
+    public int maxSubarraySum(int[] C, int B) {
+        int n = C.length;
+        int maxSum = 0;
+        int sum = 0;
+        int left = 0; // Left boundary of sliding window
+
+        // Expand right boundary
+        for (int right = 0; right < n; right++) {
+            sum += C[right]; // Add new element to sum
+            
+            // Shrink left boundary while sum exceeds B
+            while (sum > B && left <= right) {
+                sum -= C[left]; // Remove leftmost element
+                left++; // Move left boundary forward
+            }
+
+            // Update maxSum if the sum is valid
+            maxSum = Math.max(maxSum, sum);
+        }
+        
+        return maxSum;
+    }
+
+    public static void main(String[] args) {
+        int[] C = {3, 2, 5, 8, 1}; // Sample input
+        int B = 10; // Maximum allowed sum
+
+        Solution sol = new Solution();
+        System.out.println("Max Subarray Sum: " + sol.maxSubarraySum(C, B)); 
+        // Expected Output: 10 (e.g., subarray [3,2,5] or [8,1])
+    }
+}
+
+```
+
+----------
+
+##### Why Is This Optimized?
+
+✅ **O(N) Complexity:** Each element is processed **at most twice**.  
+✅ **No unnecessary re-computation:** Avoids recalculating sum for all subarrays.  
+✅ **Efficient for large inputs:** Suitable for **competitive programming** scenarios.
+
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
