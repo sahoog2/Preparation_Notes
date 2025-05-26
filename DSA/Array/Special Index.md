@@ -71,8 +71,6 @@ Therefore, the required output is 3.
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 # Solution
 
-[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
-
 Based on the observation that removing any element from the given array makes even indices of succeeding elements 
 as odd and odd indices of the succeeding elements as even. 
 Follow the steps below to solve the problem:
@@ -166,3 +164,47 @@ public class Solution {
     }
 }
 ```
+
+Clean code
+```java
+public class Solution {
+    public int solve(int[] A) {
+        int n = A.length;
+        int oddSum = 0, evenSum = 0, ans = 0;
+
+        // Step 1: Compute total odd and even index sums
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                evenSum += A[i];
+            } else {
+                oddSum += A[i];
+            }
+        }
+
+        int leftOdd = 0, leftEven = 0;
+
+        // Step 2: Iterate through elements, checking if removing them balances sums
+        for (int i = 0; i < n; i++) {
+            // Remove current element from sum
+            int remainingEven = evenSum - (i % 2 == 0 ? A[i] : 0);
+            int remainingOdd = oddSum - (i % 2 != 0 ? A[i] : 0);
+
+            // If removing the element keeps sums balanced, count it
+            if (leftEven + remainingOdd == leftOdd + remainingEven) {
+                ans++;
+            }
+
+            // Update left sums as if this element has been removed
+            if (i % 2 == 0) {
+                leftEven += A[i];
+            } else {
+                leftOdd += A[i];
+            }
+        }
+
+        return ans;
+    }
+}
+```
+
+[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
