@@ -193,7 +193,7 @@ public class Solution {
            
 
             //  Adjusted Condition to check valid index balance
-            if (remainingOdd == remainingEven) {
+            if (newEven == newOdd) {
                 ans++;
             }
 
