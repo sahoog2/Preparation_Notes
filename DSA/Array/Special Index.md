@@ -189,7 +189,7 @@ public class Solution {
             int remainingEven = evenSum - (i % 2 == 0 ? A[i] : 0);
             int remainingOdd = oddSum - (i % 2 != 0 ? A[i] : 0);
 
-            // If removing the element keeps sums balanced, count it
+            // If removing the element keeps sums balanced, count it. See the explanation of the formula below.
             if (leftEven + remainingOdd == leftOdd + remainingEven) {
                 ans++;
             }
@@ -206,5 +206,74 @@ public class Solution {
     }
 }
 ```
+
+
+#### **🚀 Key Observation**
+
+Yes, when we add `remainingOdd`, it includes `leftOdd`, and similarly, `leftEven` gets added along with `remainingEven`. But this **does not create double counting**—rather, it correctly **balances both sides**.
+
+----------
+
+#### **📌 Expanding the Formula**
+
+We are checking:
+
+```math
+leftEven + remainingOdd == leftOdd + remainingEven
+
+```
+
+Breaking down each term:
+
+-   **leftEven:** Sum of even-indexed elements **before** index `i`
+-   **remainingOdd:** Sum of odd-indexed elements **after** index `i` (excluding `A[i]` if `i` is odd)
+-   **leftOdd:** Sum of odd-indexed elements **before** index `i`
+-   **remainingEven:** Sum of even-indexed elements **after** index `i` (excluding `A[i]` if `i` is even)
+
+Now, let's rewrite `remainingEven` and `remainingOdd`:
+
+```math
+remainingEven = evenSum - leftEven - A[i] (if i is even)
+remainingOdd  = oddSum - leftOdd - A[i] (if i is odd)
+
+```
+
+Substituting these into the equation:
+
+```math
+leftEven + (oddSum - leftOdd - A[i]) == leftOdd + (evenSum - leftEven - A[i])
+
+```
+
+Which simplifies to:
+
+```math
+leftEven + oddSum - leftOdd - A[i] == leftOdd + evenSum - leftEven - A[i]
+
+```
+
+Cancel `A[i]` on both sides:
+
+```math
+leftEven + oddSum - leftOdd == leftOdd + evenSum - leftEven
+
+```
+
+Rearrange:
+
+```math
+leftEven + oddSum == leftOdd + evenSum
+
+```
+
+Since `evenSum` and `oddSum` are constant totals, **this ensures both sides are equal**, meaning removing `A[i]` balances the sums!
+
+----------
+
+#### **🔥 Why This Works**
+
+✔ **Each side correctly accounts for all elements** before and after removal.  
+✔ **There is no double counting**—the equation correctly adjusts for shifts in indexing.  
+✔ **Balanced sums mean valid index removal**, which is exactly what we want to find!
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
