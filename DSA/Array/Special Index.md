@@ -175,30 +175,33 @@ public class Solution {
         // Step 1: Compute total odd and even index sums
         for (int i = 0; i < n; i++) {
             if (i % 2 == 0) {
-                evenSum += A[i];
+                evenSum += A[i]; 
             } else {
-                oddSum += A[i];
+                oddSum += A[i]; 
             }
         }
 
-        int leftOdd = 0, leftEven = 0;
+        int leftEven = 0, leftOdd = 0;
 
         // Step 2: Iterate through elements, checking if removing them balances sums
         for (int i = 0; i < n; i++) {
-            // Remove current element from sum
-            int remainingEven = evenSum - (i % 2 == 0 ? A[i] : 0);
-            int remainingOdd = oddSum - (i % 2 != 0 ? A[i] : 0);
+            // Remove current element and adjust new sums properly, considering the even and odd elements after i gets changed after ith removal.
+            //as after i now the odd positions became even, we need to count odd elements now. Ith position should be removed only if it is odd.
+            int newEven = leftEven + oddSum - leftOdd - (i % 2 != 0 ? A[i] : 0) ;
+            //as after i now the even positions became odd, we need to count odd elements now. ith position should be removed only if it is even.
+            int newOdd = leftOdd + evenSum - leftEven - (i % 2 == 0 ? A[i] : 0);
+           
 
-            // If removing the element keeps sums balanced, count it. See the explanation of the formula below.
-            if (leftEven + remainingOdd == leftOdd + remainingEven) {
+            //  Adjusted Condition to check valid index balance
+            if (remainingOdd == remainingEven) {
                 ans++;
             }
 
-            // Update left sums as if this element has been removed
+            //  Correctly Update Left Sums After Removal
             if (i % 2 == 0) {
-                leftEven += A[i];
+                leftEven += A[i]; 
             } else {
-                leftOdd += A[i];
+                leftOdd += A[i]; 
             }
         }
 
