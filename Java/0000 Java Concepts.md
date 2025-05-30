@@ -4,7 +4,7 @@ Java interviews typically assess **core concepts, coding ability, problem-solvin
 ---
 
 ### **📌 1️⃣ Core Java Concepts**
-✅ Object-Oriented Programming (**OOPs**)  
+✅ [Object-Oriented Programming (**OOPs**)](https://github.com/sahoog2/Preparation_Notes/blob/main/Java/0001%20OOPS.md)
 ✅ Data Types & Variables  
 ✅ Operators & Expressions  
 ✅ Control Statements (Loops, Conditionals)  
