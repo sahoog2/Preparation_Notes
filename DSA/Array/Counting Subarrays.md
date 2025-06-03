@@ -81,6 +81,15 @@ Since the constraints are small we can generate all subarrays using 2 loops. Thi
 Note that we cannot iterate over the subarray after generating the left index and right index to find the sum as this will increase the time complexity of the solution to O(N^3). We can find the sum of each subarray in O(1) with the help of a prefix sum array, which takes an O(N) precomputation.
 Please refer to the complete solution for implementation.
 
+📌 Optimized Approach (O(N))
+✅ Use two pointers (left and right) to form a dynamic sliding window.
+✅ Expand right → Add elements to the window.
+✅ If sum exceeds or reaches B, move left to shrink the window.
+✅ Every new subarray formed in the window contributes to the final count
+
+See the solution after below code
+
+
 ```java
 public class Solution {
     public int solve(int[] A, int B) {
@@ -101,6 +110,39 @@ public class Solution {
         return ans;
     }
 }
+
+```java
+public class Solution {
+    public int countSubarrays(int[] A, int B) {
+        int n = A.length;
+        int count = 0, sum = 0;
+        int left = 0;
+
+        for (int right = 0; right < n; right++) {
+            sum += A[right]; // Expand the window
+
+            while (sum >= B && left <= right) {
+                sum -= A[left]; // Shrink the window
+                left++;
+            }
+
+            // Add subarrays ending at 'right'
+            count += (right - left + 1);
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int[] A = {2, 5, 3, 10, 6};
+        int B = 10;
+
+        Solution sol = new Solution();
+        System.out.println("Count of subarrays: " + sol.countSubarrays(A, B));  
+        // Expected Output: 9
+    }
+}
+```
 ```
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
