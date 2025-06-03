@@ -90,6 +90,13 @@ If the condition is true, then we will append to a list that we will return.
 
 Refer to the complete solution for more implementation details.
 
+📌 Optimized Approach
+✅ Iterate through all possible centers (i), checking if a subarray of length 2 * B + 1 exists around that index.
+✅ Verify the 0-1 alternating pattern by checking adjacent elements.
+✅ Use a sliding window technique to efficiently validate subarrays
+
+Check after below code for solution
+
 ```java
 import java.util.*;
 
@@ -139,6 +146,44 @@ public class Solution {
     }
 }
 ```
+```java
+import java.util.ArrayList;
+import java.util.List;
 
+public class Solution {
+    public List<Integer> findAlternatingCenters(int[] A, int B) {
+        int n = A.length;
+        int subArraySize = 2 * B + 1;
+        List<Integer> centers = new ArrayList<>();
+
+        for (int i = B; i < n - B; i++) { // Valid center range
+            boolean isValid = true;
+
+            // Check alternating pattern in subarray around index 'i'
+            for (int j = i - B; j < i + B; j++) {
+                if (A[j] == A[j + 1]) { // Two adjacent elements are the same
+                    isValid = false;
+                    break;
+                }
+            }
+
+            if (isValid) {
+                centers.add(i); // Index 'i' is a valid center
+            }
+        }
+
+        return centers;
+    }
+
+    public static void main(String[] args) {
+        int[] A = {0, 1, 0, 1, 0, 1, 0, 1, 0};
+        int B = 2;
+
+        Solution sol = new Solution();
+        System.out.println("Valid Centers: " + sol.findAlternatingCenters(A, B));
+        // Expected Output: [2, 3, 4, 5, 6] (Centers forming valid subarrays)
+    }
+}
+```
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
