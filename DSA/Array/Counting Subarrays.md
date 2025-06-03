@@ -110,6 +110,7 @@ public class Solution {
         return ans;
     }
 }
+```
 
 ```java
 public class Solution {
@@ -142,7 +143,6 @@ public class Solution {
         // Expected Output: 9
     }
 }
-```
 ```
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
