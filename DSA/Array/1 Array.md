@@ -290,7 +290,13 @@ We can improve the space complexity by modifying the array A itself. Since, ther
 Pseudo Code:  
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeHoIIBWW9CPCNHarOHi2RxGEbrGaL9A7NqvKu6p7-X5cmBdawX_c0pZIGOyqhnQzvX84wsf_Itc77dgfOb8J_OlXUEpPL6OL_6wN3W0ZDMW4nL_GQWGxeKXbggYXDZ4FJWi5d9c2SqVLGneNaR4MAEECBo?key=Ksui3maNtsnPvdDfGduImg)
 
-  
+## My realization formulas
+ 1. ✅ Formula for no of subarrays that can be formed starting from index 'left' & maximum ending at index 'right' 
+count of subarrays = (right - left + 1) 
+starting at 0 and max ending at 2, sub arrays are 
+{0},{0,1},{0,1,2} -> 3
+with the formula = 2-0+1 = 3
+2. ✅
 
   
 
