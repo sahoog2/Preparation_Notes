@@ -107,7 +107,7 @@ public class Solution {
         int n = A.length; // Length of input array
 
         // Iterate through all possible starting positions of the subarray
-        for (int i = 0; i < n - len + 1; i++) {
+        for (int i = 0; i <= n - len; i++) {
             int prev = -1; // Variable to store previous element
             int flag = 1; // Flag to check if the subarray is alternating
             
