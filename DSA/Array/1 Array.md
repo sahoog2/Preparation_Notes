@@ -298,7 +298,16 @@ Pseudo Code:
 > <br>sub arrays are  {0},{0,1},{0,1,2} -> 3 
 > <br> with the formula = 2-0+1 = 3
 
-2. ✅
+2. ✅ No of times an element of an array appears in all the subarray formed from the array.
+>  For each element, if we know how many subarrays do they come in, we can easily calculate their contribution to the sum as
+>  <br>(Number of Subarrays) * (A[i]).
+>  <br> How do we calculate the number of subarrays for each element?
+>  <br>Let us focus on the definition of a subarray. It is obtained by deleting zero or more elements from either end.
+>  <br>So, for each element, let X be the number of elements to their left, and Y be the number of elements to their right.
+>  <br>Number of required subarrays = (X + 1) * (Y + 1)
+>  <br>We can easily know X and Y from the index of the element.
+>  <br>Let the array be 0 - indexed and N be the length of the array, X = i, Y = N - i - 1
+>  <br> the formula at position i will be **(i+1)*(n-i) times contribution** as i itself also need to be considered.
 
   
 
