@@ -580,3 +580,5 @@ Result: Orders for User: 12345 → [Order1, Order2, Order3]
 
 ✔ **Avoids unnecessary nesting (`thenApply()` would return `CompletableFuture<CompletableFuture<T>>`).**  
 ✔ **Ensures proper chaining when one async task depends on another.**
+
+# Atomic Data Type
