@@ -144,41 +144,14 @@ list.sort(Comparator.comparing(Student::getMarks)); // Ascending
 
 ### 📌 Summary: Comparable vs Comparator
 
-Feature
-
-Comparable
-
-Comparator
-
-Located in Class
-
-Yes (`compareTo()` inside class)
-
-No (defined externally)
-
-Interface Used
-
-`Comparable<T>`
-
-`Comparator<T>`
-
-Method Name
-
-`compareTo(T o)`
-
-`compare(T o1, T o2)`
-
-Single / Multi
-
-Allows only one sorting logic
-
-Can define multiple sorting rules
-
-Example Use Case
-
-Default sort (e.g., by name)
-
-Custom sort (e.g., by marks, age)
+| Feature|Comparable | Comparator|
+|--|--|--|
+| Located in Class | Yes (`compareTo()` inside class) |No (defined externally)|
+|Interface Used|`Comparable<T>`|`Comparator<T>`|
+|Method Name|`compareTo(T o)`|`compare(T o1, T o2)`|
+|Single / Multi|Allows only one sorting logic|Can define multiple sorting rules|
+|Example Use Case|Default sort (e.g., by name)|Custom sort (e.g., by marks, age)
+|
 
 ----------
 
