@@ -22,7 +22,7 @@ Java interviews typically assess **core concepts, coding ability, problem-solvin
 ### **📌 2️⃣ Collections & Data Structures**
 ✅ Array, List, Set, Map  
 ✅ HashMap vs TreeMap  
-✅ Sorting & Searching Algorithms  
+✅ [Sorting & Searching Algorithms  ](https://github.com/sahoog2/Preparation_Notes/blob/main/Java/003%20Sorting%20%26%20Searching%20Algorithms.md)
 ✅ Thread-Safe Collections (ConcurrentHashMap, CopyOnWriteArrayList)  
 
 🔹 **Example Question:**  
