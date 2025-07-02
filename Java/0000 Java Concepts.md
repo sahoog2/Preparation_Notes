@@ -11,6 +11,8 @@ Java interviews typically assess **core concepts, coding ability, problem-solvin
   - ✅ Operators & Expressions   
   - ✅ Control Statements (Loops, Conditionals) 
   - ✅ Exception Handling
+  - ✅ Java Generics: Type-Safe Programming
+
 
  
 
