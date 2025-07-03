@@ -1,5 +1,5 @@
 1. [Largest Number](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/largest%20number.md)
 2. [Elements Removal](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/Elements%20Removal.md)
 3. [Sort by Color](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/Sort%20by%20Color.md)
-4. [Noble Integer]()
+4. [Noble Integer](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/Noble%20Integer.md)
 5. [Arithmetic Progression?](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/Arithmetic%20Progression.md)
