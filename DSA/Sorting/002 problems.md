@@ -2,4 +2,4 @@
 2. Elements Removal
 3. Sort by Color
 4. Noble Integer
-5. Arithmetic Progression?
+5. [Arithmetic Progression?](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/Arithmetic%20Progression.md)
