@@ -1,4 +1,5 @@
 [Solution](#SOLUTION)  [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25475/homework/problems/11087/hints?navref=cl_pb_nv_tb)  [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/002%20problems.md)
+
 Q2. Elements Removal
 
 **Problem Description**  
