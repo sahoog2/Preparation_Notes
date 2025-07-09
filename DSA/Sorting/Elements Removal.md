@@ -88,6 +88,27 @@ We can easily find the total cost in one single loop.
 
 Time Complexity: O(N)  
 Space Complexity: O(1)
+
+```java
+public class Solution {
+    public int solve(int[] A) {
+        
+        Integer[] arr = Arrays.stream(A).boxed().toArray(Integer[]::new);
+        Arrays.sort(arr, (a,b) -> b-a);
+        int sum = 0;
+        int ans = 0;
+        int prevAns = 0;
+        for(int num : arr) sum += num;
+        for(int num : arr){
+            ans += sum - prevAns;
+            prevAns += num; 
+        } 
+        return ans;
+    }
+}
+
+```
+
 ```java
 public class Solution {
     public int solve(ArrayList<Integer> A) {
