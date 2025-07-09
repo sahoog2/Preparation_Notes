@@ -97,32 +97,67 @@ There are multiple approaches possible here. We need to make sure we do not allo
 
 > Swap the 0s to the start of the array maintaining a pointer, and 2s to the end of the array.  
 > 1s will automatically be in their right position.
-
 ```java
 public class Solution {
-	public ArrayList<Integer> sortColors(ArrayList<Integer> A) {
-	    
-	    int zero = 0;
-	    int two = A.size() - 1;
-	    
-	    for (int i = 0; i <= two;) {
-	        if (A.get(i) == 0) {
-	            int temp = A.get(zero);
-	            A.set(zero, 0);
-	            A.set(i, temp);
-	            zero++;
-	            i++;
-	        } else if (A.get(i) == 2) {
-	            int temp = A.get(two);
-	            A.set(two, 2);
-	            A.set(i, temp);
-	            two--;
-	        } else {
-	            i++;
-	        }
-	    }
-	    return A;
-	}
+    public int[] sortColors(int[] A) {
+        int n = A.length;
+        for(int i=0;i<n-1;i++){
+            for(int j=0;j<n-i-1;j++){
+                if(A[j]>A[j+1]){
+                    int tmp = A[j];
+                    A[j] = A[j+1];
+                    A[j+1] = tmp;
+                }
+            }
+        }
+
+        return A;
+    }
 }
+
+```
+```java
+public class Solution {
+    public ArrayList<Integer> sortColors(ArrayList<Integer> A) {
+        int cnt0=0;
+        int cnt1=0;
+        int cnt2=0;
+        ArrayList<Integer> ans = new ArrayList<>();
+        if(A.size()==1){
+            return A;
+
+        }
+        for(int i=0;i<A.size();i++){
+            if(A.get(i)==0){
+                cnt0++;
+
+            } else if(A.get(i)==1){
+                cnt1++;
+
+            } else if(A.get(i)==2){
+                cnt2++;
+
+            }
+            
+        }
+
+        for(int i=0;i<cnt0;i++){
+            ans.add(0);
+
+        }
+        for(int i=0;i<cnt1;i++){
+            ans.add(1);
+
+        }
+        for(int i=0;i<cnt2;i++){
+            ans.add(2);
+
+        }
+
+        return ans;
+
+    }
+}
+
 ```
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/002%20problems.md)
