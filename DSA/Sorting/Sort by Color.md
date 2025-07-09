@@ -1,6 +1,6 @@
 [Solution](#SOLUTION)  [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25475/assignment/problems/167/hints?navref=cl_pb_nv_tb)  [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Sorting/002%20problems.md)
 
-Q1.  Sort by ColorSolved
+Q3.  Sort by ColorSolved
 
 
 **Problem Description**  
