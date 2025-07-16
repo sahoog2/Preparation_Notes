@@ -80,3 +80,6 @@ Below is an example of a thread-safe Singleton class implemented using the **laz
 ✔ **Consistency**: Guarantees that all components use the same instance.  
 ✔ **Ease of Implementation**: Simple to implement in most languages.
 
+## True singleton
+singleton can be broken by reflection & serialization. This can be addressed by creating a [singleton enum](https://www.tutorialspoint.com/how-to-make-a-singleton-enum-in-java#:~:text=The%20singleton%20pattern%20restricts%20the,want%20to%20change%20the%20implementation).
+
