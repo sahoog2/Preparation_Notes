@@ -24,6 +24,7 @@ The Singleton pattern is commonly used in scenarios such as:
 -   Database connections (ensuring a single connection pool).
     
 -   Cache management.
+-   In general 1-> When there is a shared object. 2-> The class is inmutable or no attributes 3-> Object creation is expensive Like database connection(it includes I/O, 3 way tcp handshake, authorization & authentication)
     
 
 ## **Implementation of Singleton Pattern in Java**
