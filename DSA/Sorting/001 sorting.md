@@ -11,33 +11,66 @@ Sorting is the process of arranging data in a particular format—usually in **a
 
 ## 📚 **Classification of Sorting Algorithms**
 
-Category
 
-Algorithms
+Sorting algorithms can be classified in several ways based on their behavior, efficiency, and characteristics. Here's a structured overview:
 
-**Comparison-based**
+----------
 
-Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort
+#### 📊 **Classification of Sorting Algorithms**
 
-**Non-comparison-based**
+##### 1. 🔍 **Based on Comparison**
 
-Counting Sort, Radix Sort, Bucket Sort
+-   **Comparison-Based Sorting**: Elements are sorted by comparing them.
+    -   Examples: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort
+-   **Non-Comparison-Based Sorting**: Sorting is done without direct comparisons.
+    -   Examples: Counting Sort, Radix Sort, Bucket Sort  
+        [Learn more about this classification](https://www.wscubetech.com/resources/dsa/sorting-algorithms)
 
-**Stable**
+----------
 
-Bubble Sort, Insertion Sort, Merge Sort, Counting Sort
+##### 2. 🔁 **Based on Recursion**
 
-**Unstable**
+-   **Recursive Algorithms**: Use recursion to divide and conquer.
+    -   Examples: Merge Sort, Quick Sort
+-   **Non-Recursive Algorithms**: Use iterative logic.
+    -   Examples: Bubble Sort, Selection Sort, Insertion Sort
 
-Quick Sort, Heap Sort (can be made stable)
+----------
 
-**In-place**
+##### 3. ⚖️ **Based on Stability**
 
-Quick Sort, Insertion Sort, Bubble Sort
+-   **Stable Sorting**: Preserves the relative order of equal elements.
+    -   Examples: Bubble Sort, Merge Sort, Insertion Sort, Counting Sort
+-   **Unstable Sorting**: May change the relative order of equal elements.
+    -   Examples: Quick Sort, Heap Sort, Selection Sort
 
-**Not In-place**
+----------
 
-Merge Sort, Counting Sort
+##### 4. 🧠 **Based on Adaptability**
+
+-   **Adaptive Sorting**: Performance improves with partially sorted input.
+    -   Examples: Insertion Sort, Bubble Sort, Quick Sort
+-   **Non-Adaptive Sorting**: Performance remains the same regardless of input order.
+    -   Examples: Selection Sort, Merge Sort, Heap Sort
+
+----------
+
+##### 5. 🧮 **Based on Memory Usage**
+
+-   **In-Place Sorting**: Uses minimal extra space (O(1)).
+    -   Examples: Quick Sort, Heap Sort, Bubble Sort
+-   **Out-of-Place Sorting**: Requires additional memory.
+    -   Examples: Merge Sort, Counting Sort, Radix Sort
+
+----------
+
+##### 6. 💾 **Based on Data Location**
+
+-   **Internal Sorting**: Operates entirely in main memory.
+    -   Examples: Quick Sort, Bubble Sort
+-   **External Sorting**: Uses external storage (e.g., disk) for large datasets.
+    -   Example: External Merge Sort  
+        [Explore more types and examples](https://prepinsta.com/classification-of-sorting-algorithms/)
 
 ----------
 
@@ -226,7 +259,6 @@ Start
   |                              |-- No  --> Selection Sort
 
 </pre>
-
 
 
 
