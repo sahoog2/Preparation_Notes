@@ -220,6 +220,7 @@ public class Solution {
         return maxSum;
     }
 }
+```
 
 issue 1 : line no [maxSum = Math.max(maxSum,sum);]
 
@@ -230,6 +231,6 @@ issue 2 : line no  [for(int i=n-1; i>=n-B+1; i--){]   (n = length of array, if n
           for example if n = 6, B = 3. for 3 elements from back, i should traverse till 5,4 & 3 index.
           
           now with the formula 6-3+1 = 4, i will traverse till index 4 which is wrong.
-   ```
+
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
