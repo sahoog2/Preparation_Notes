@@ -3,6 +3,7 @@
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/homework/problems/16123/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+[Attempt](#Attempt)
 
 
 **Problem Description**  
@@ -185,5 +186,54 @@ public class Solution {
     }
 }
 ```
+# Attempt
+1. Attempt 1
+```
+public class Solution {  
+    public int[] solve(int[] A, int B) {  
+        int n = A.length;  
+        ArrayList<Integer> ans = new ArrayList<>();  
+        for (int i = 0; i < n; i++) {  
+            int stat = 0;  
+            int cnt = i - 1;  
+            
+            for (int j = 0; j < B; j++) {  
+                if (cnt >= 0 && A[cnt] != curVal) {  
+                    curVal = A[cnt];  
+                    cnt--;  
+                    int curVal = A[i];  
+                    continue;  
+                } else {  
+                    stat = 1;  
+                    break;  
+                }  
+            }  
+         
+            for (int j = i + 1; j <= i + B; j++) {  
+	            int curVal = A[i];  
+                if (j <= n - 1 && A[j] != curVal) {  
+	                curVal = A[j];
+                    continue;  
+                } else {  
+                    stat = 1;  
+                    break;  
+                }  
+            }  
+            if (stat == 0) {  
+                ans.add(i);  
+            }  
+        }  
+        int len = ans.size();  
+        int[] anss = new int[len];  
+        for (int i = 0; i < len; i++) {  
+            anss[i] = ans.get(i);  
+        }  
+        return anss;  
+    }  
+}
+```
+Issue 1 : Because of code int curVal = A[i]; at two places, the comparison happens with A[i] for checking no two adjacent values are same. To resolve this we have to move this line out both the for loops
+
+Issue 2 : the code can be optimized as explained in 2nd solution, where we iterate only for valid centers which is B to N-B indexes.
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
