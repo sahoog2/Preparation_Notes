@@ -3,6 +3,7 @@
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/homework/problems/16089/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+[Attempt](#Attempt)
 
 
 **Problem Description**  
@@ -145,4 +146,37 @@ public class Solution {
 }
 ```
 
+# Attempt
+1. Attempt 1
+   ```
+   public class Solution {
+    public int solve(int[] A, int B) {
+        int n = A.length;
+        int sum = 0;
+        int curr = 0;
+        int ans = 0;
+
+        for(int i=0;i<n;i++){
+            sum += A[i];
+            if(sum < B){
+                ans++;
+            }
+            while(sum >= B && curr<n){
+                sum -= A[curr];
+                curr++;
+            }
+        }
+
+        return ans;
+    }
+}
+
+   ```
+
+issue 1 : if(sum < B){
+                ans++;
+            }
+here lets say for index  1, 2 & 3 the sum is < B and hence all the sub array till index 3 should be counted for.
+As per the logic number of subarrays counted are 3, as ans++ will be invoked thrice.
+But the actual number of sub arrays are -> 2-0+1 = 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
