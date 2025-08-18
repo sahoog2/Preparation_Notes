@@ -147,8 +147,8 @@ public class Solution {
 ```
 
 # Attempt
-1. Attempt 1
-   ```
+ 1. Attempt 1
+  ```
    public class Solution {
     public int solve(int[] A, int B) {
         int n = A.length;
@@ -176,7 +176,16 @@ public class Solution {
 issue 1 : if(sum < B){
                 ans++;
             }
-here lets say for index  1, 2 & 3 the sum is < B and hence all the sub array till index 3 should be counted for.
-As per the logic number of subarrays counted are 3, as ans++ will be invoked thrice.
-But the actual number of sub arrays are -> 2-0+1 = 
+lets assume for index 0 the sum is <B hence ans is updated to 1.
+now for index 1 also sum (A[0] + A[1]) is < B hence ans is updated to 2
+here the logic went wrong
+no of sub arrays at index 0 = 1 {[0]},  ans is updated to 1
+no of sub arrays at index 1 = 2 {[0,1],[1]} ans should be updated to ans = previous ans + new ans = 1+2 = 3. But the ans is updated to 2
+
+so  if(sum < B){ ans++; } should be replaced with a logic which calculates the number of subarrays that can be formed with the current ending index i.e sum += (i-curr+1)
+
+we can consider i as right and curr as left for better clarity. So the formula becomes sum += right - left +1
+ 
+ 2. Attempt 2
+
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
