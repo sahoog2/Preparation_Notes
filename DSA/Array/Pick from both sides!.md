@@ -222,9 +222,13 @@ public class Solution {
 }
 
 issue 1 : line no [maxSum = Math.max(maxSum,sum);]
+
           Here -ve number is not considered. If sum of B elements is -ve then maxSum is updated as 0 wrongly.
+          
 issue 2 : line no  [for(int i=n-1; i>=n-B+1; i--){]   (n = length of array, if n is 5 then the last index is 4) 
+
           for example if n = 6, B = 3. for 3 elements from back, i should traverse till 5,4 & 3 index.
+          
           now with the formula 6-3+1 = 4, i will traverse till index 4 which is wrong.
 
    ```
