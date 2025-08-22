@@ -3,6 +3,7 @@
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/assignment/problems/12827/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+[Attempts](#Attempts)
 
 
 
@@ -122,4 +123,50 @@ public class Solution {
     }
 }
 ```
+
+# Attempts
+
+1. Attempt 1
+```
+public class Solution {
+    public int solve(int[] A, int B) {
+        int n = A.length;
+        int sum = 0;
+        for(int i=0;i<B;i++){
+            sum += A[i];
+        }
+
+        int lstAvg = sum/B;
+        int ans = 0;
+
+        for(int j=0;j<n-B;j++){
+            sum = sum - A[j] + A[j+B];
+            int avg = sum/B;
+            if(avg < lstAvg){
+                ans = j;
+                lstAvg = avg;
+            }
+        }
+
+        return ans;
+    }
+}
+
+```
+
+Issue 1:
+This solution will fail for below input :-
+
+A = [18,11,16,19,11,9,8,15,3,10,9,20,1,19]
+
+B = 1;
+
+The reason is:
+
+Before the for loop the B size array average is already calculated and the index is stored in variable ans.
+
+In the for loop as part of sliding window technology, for j=0, the 0 index is subtracted and B^th^ index is added. This means the subarray from index 1 is being calculated.
+
+However in the if clause we are saving j as answer. This should have been j+1. 
+
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
