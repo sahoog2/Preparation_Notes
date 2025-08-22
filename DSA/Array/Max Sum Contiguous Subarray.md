@@ -4,6 +4,7 @@
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/assignment/problems/56/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+[Attempts](#Attempt)
 
 
 
@@ -120,5 +121,34 @@ public class Solution {
     }
 }
 ```
+# Attempt
+1. Attempt 1
+```
+public class Solution {
+    public int maxSubArray(final int[] A) {
+        int n = A.length;
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        for(int i=0;i<n;i++){
+            sum += A[i];
+            if(sum <0){sum = 0;}
+            maxSum = Math.max(sum,maxSum);
+        }
+
+        return maxSum;
+    }
+}
+
+```
+Issue 1:-
+
+This solution will fail for a edge case like input - [-500].
+
+The reason is order of below two lines. To get correct solution these two lines order need to be changed.
+
+if(sum <0){sum = 0;}
+maxSum = Math.max(sum,maxSum);
+
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
