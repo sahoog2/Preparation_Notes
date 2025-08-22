@@ -169,4 +169,29 @@ In the for loop as part of sliding window technology, for j=0, the 0 index is su
 
 However in the if clause we are saving j as answer. This should have been j+1. 
 
+Also
+
+the avearge calculation is a classic Java type promotion pitfall here.
+
+Even though lstAvg is declared as a double, the expression 89 / 9 is evaluated before it's assigned. And since both 89 and 9 are integers, Java performs integer division first, which results in:
+89 / 9 = 9   // integer division, decimal part is discarded
+
+
+Then, that integer result (9) is converted to double, giving you:
+double lstAvg = 9.0;
+
+
+
+To fix this we need to force floating-point division by making at least one operand a double:
+double lstAvg = 89.0 / 9;     // yields 9.888...
+
+
+Or:
+double lstAvg = (double) 89 / 9;
+
+
+Or even:
+double lstAvg = 89 / 9.0;
+
+
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
