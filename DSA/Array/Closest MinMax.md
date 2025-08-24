@@ -3,6 +3,7 @@
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25458/assignment/problems/986/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+[Attempts](#Attempts)
 
 
 **Problem Description**  
@@ -205,6 +206,54 @@ A = [5, 2, 2, 5, 3, 2, 4, 5]
 - Min: 2, Max: 5
 - Expected Output: 2
 - Explanation: [5, 2] (indices 3 and 4) is the shortest subarray.
+
+# Attempts
+1. Attempt 1
+```
+public class Solution {
+    public int solve(int[] A) {
+        int n = A.length;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int minIndex = -1;
+        int maxIndex = -1;
+        int len = 0;
+
+        for(int i=0;i<n;i++){
+            min = Math.min(min, A[i]);
+            max = Math.max(max, A[i]);
+        }
+
+        for(int i=0;i<n;i++){
+            if(A[i]==min && maxIndex != -1){
+                int newLen = i-maxIndex+1;
+                if(newLen < len){
+                    len = newLen;
+                    minIndex = i;
+                }
+            }else if(A[i]==max && minIndex != -1){
+                int newLen = i-minIndex+1;
+                if(newLen < len){
+                    len = newLen;
+                    maxIndex = i;
+                }
+            }
+
+            if(A[i] == min && minIndex == -1){
+                minIndex = i;
+            } else if(A[i] == max && maxIndex == -1){
+                maxIndex = i;
+            }
+        }
+
+        return len;
+    }
+}
+
+```
+Issue 1 :   int len = 0 → Invalid Initial Value
+
+You're trying to find the **minimum valid subarray length**, so initializing `len = 0` means no valid subarray will ever be smaller than it.
 
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
