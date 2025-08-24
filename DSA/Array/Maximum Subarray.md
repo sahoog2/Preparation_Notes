@@ -2,6 +2,7 @@
 
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/assignment/problems/16121/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
+[Attempts](#Attempts)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 
 
@@ -205,5 +206,47 @@ public class Solution {
 ✅ **O(N) Complexity:** Each element is processed **at most twice**.  
 ✅ **No unnecessary re-computation:** Avoids recalculating sum for all subarrays.  
 ✅ **Efficient for large inputs:** Suitable for **competitive programming** scenarios.
+
+# Attempts
+1. Attempt 1
+```
+public class Solution {
+    public int maxSubarray(int A, int B, int[] C) {
+        int back = 0;
+        
+        int ans = 0;
+        int sum = 0;
+
+        for(int front=0;front<A;front++){
+            sum += C[front];
+            if(sum<=B && sum>=ans){
+                ans = sum;
+            }
+            
+            while(sum > B){
+                sum -= C[back];
+                back++;
+            } 
+        }
+
+        return ans;
+
+    }
+}
+
+```
+
+Issue 1 :- Assumes All Elements Are Non-Negative
+
+Issue 2 :- Incorrect  Update Timing
+
+This update happens **before** the `while(sum > B)` loop.  
+So if `sum > B`, it might still update `ans` incorrectly before shrinking the window.
+
+**Fix:** Move the update **after** the `while` loop
+
+Issue 3 :- Unnecessary check [sum<=B] in (sum<=B && sum>=ans){}. Coz this is taken care by the while loop.
+
+Issue 4:- Need to ensure that the back is not going ahead of front in the while loop. To achieve this need to have back<=front or left<=right logic in the while loop.
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
