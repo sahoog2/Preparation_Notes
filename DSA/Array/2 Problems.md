@@ -9,7 +9,7 @@
  # Carry Forward
  
   1. [Special Subsequences "AG"](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Special%20Subsequences%20%22AG%22.md)
-  2. [Closest MinMax](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Closest%20MinMax.md)
+  2. [Closest MinMax](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Closest%20MinMax.md) (attempt 1)
   3. [Bulbs](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Bulbs.md)
   4. [Amazing Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Amazing%20Subarrays.md)
   5. [Even Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Even%20Subarrays.md)
