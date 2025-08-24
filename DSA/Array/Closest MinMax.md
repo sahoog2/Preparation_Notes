@@ -251,9 +251,53 @@ public class Solution {
 }
 
 ```
-Issue 1 :   int len = 0 → Invalid Initial Value
+✅ Issue 1 :   int len = 0 → Invalid Initial Value
 
 You're trying to find the **minimum valid subarray length**, so initializing `len = 0` means no valid subarray will ever be smaller than it.
 
+✅ Issue 2:  `minIndex` and `maxIndex` Are Not Updated Consistently
+
+```java
+if (A[i] == min && minIndex == -1) {
+    minIndex = i;
+}
+
+```
+
+❌ You're only setting `minIndex` and `maxIndex` **once**, the first time you encounter `min` or `max`.  
+But to find the **shortest subarray**, you need to **update these indices every time** you see a new occurrence of `min` or `max`.
+
+✅ **Fix:** Always update:
+
+```java
+if (A[i] == min) {
+    minIndex = i;
+    if (maxIndex != -1) {
+        len = Math.min(len, i - maxIndex + 1);
+    }
+}
+if (A[i] == max) {
+    maxIndex = i;
+    if (minIndex != -1) {
+        len = Math.min(len, i - minIndex + 1);
+    }
+}
+
+```
+
+✅ Issue 3 :-  Incorrect Update Order
+
+```java
+if (A[i] == min && maxIndex != -1) {
+    // update len
+    minIndex = i;
+}
+
+```
+
+You're updating `minIndex` **after** using it to compute `newLen`.  
+This means you're using a **stale index** in the next iteration.
+
+**Fix:** Update `minIndex` and `maxIndex` **before** using them to compute `len`.
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
