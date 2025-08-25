@@ -14,6 +14,10 @@ You have to find the sum of all subarray sums of A.
 More formally, a subarray is defined as a contiguous part of an array which we can obtain by deleting zero or more elements from either end of the array.  
 A subarray sum denotes the sum of all the elements of that subarray.
 
+Start choices: A[i] can be the end of any subarray that starts at index 0 to i → i+1 choices
+• 	End choices: A[i] can be the start of any subarray that ends at index i to n-1 → n-i choices
+• 	So, total subarrays that include A[i] = (i+1) * (n-i)
+
 **Note :** Be careful of integer overflow issues while calculations. Use appropriate datatypes.
 
   
