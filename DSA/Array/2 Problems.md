@@ -20,7 +20,7 @@
    2. [Good Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Good%20Subarrays.md)
    3. [Alternating Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Alternating%20Subarrays.md) (A1)
    4. [Max Sum Contiguous Subarray](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Max%20Sum%20Contiguous%20Subarray.md) (A1)
-   5. [Subarray with least average](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Subarray%20with%20least%20average%20medium.md) (A1)
+   5. [Subarray with least average](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Subarray%20with%20least%20average%20medium.md) (A1/S)
    6. [Maximum Subarray Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Maximum%20Subarray.md) (A1/S)
  # Contribution Technique
  1. [Sum of All Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Sum%20of%20All%20Subarrays.md) (A1)
