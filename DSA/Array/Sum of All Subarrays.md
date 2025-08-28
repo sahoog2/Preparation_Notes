@@ -3,6 +3,7 @@
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25460/assignment/problems/14363/hints?navref=cl_pb_nv_tb)
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+[Attempts](#Attempts)
 
 
 
@@ -124,5 +125,32 @@ class Solution {
     }
 }
 ```
+
+# Attempts
+1. Attempt 1
+```
+public class Solution {
+    public long subarraySum(int[] A) {
+        int n = A.length;
+        long ans =0;
+
+        for(int i=0;i<n;i++){
+            ans += (i+1)*(n-i)*A[i];
+        }
+
+        return ans;
+    }
+}
+```
+
+Issue :-
+
+**Issue 1: Integer Overflow in Intermediate Multiplication**
+
+Even though `ans` is declared as `long`, the expression:
+
+(i + 1) * (n - i) * A[i]
+
+is computed using **int arithmetic** first, because all operands are `int`. If the intermediate result exceeds `Integer.MAX_VALUE` (≈ 2.1 billion), it wraps around and gives incorrect results.
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
