@@ -231,7 +231,11 @@ issue :
 
 for (int i = 0; i < n - len; i++)
 
-Since you're checking subarrays of length len = 2 * B + 1, the last valid starting index is n - len, inclusive.
+Since you're checking subarrays of length len = 2 * B + 1, the last valid starting index is n - len, inclusive. so the updated code should be
+
+for (int i = 0; i <= n - len; i++)
+
+otherwise it will fail for B as 0.
 
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
