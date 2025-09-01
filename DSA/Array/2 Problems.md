@@ -4,7 +4,7 @@
  2. [Special Index](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Special%20Index.md) (A1)
  3. [Pick from both sides!](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Pick%20from%20both%20sides!.md) (A1)
  4. [Range Sum Query](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Range%20Sum%20Query.md)
- 5. [Time to equality](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Time%20to%20equality.md)
+ 5. [Time to equality](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Time%20to%20equality.md) (S)
  6. [Product array puzzle](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Product%20array%20puzzle.md) (S)
  # Carry Forward
  
