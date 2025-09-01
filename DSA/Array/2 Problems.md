@@ -16,7 +16,7 @@
   6. [Leaders in an array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Leaders%20in%20an%20array.md)
  # Sliding Window
    (Subarrays class)
-   1. [Counting Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Counting%20Subarrays.md) (A1)
+   1. [Counting Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Counting%20Subarrays.md) (A1/A2)
    2. [Good Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Good%20Subarrays.md)
    3. [Alternating Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Alternating%20Subarrays.md) (A1/A2/S)
    4. [Max Sum Contiguous Subarray](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Max%20Sum%20Contiguous%20Subarray.md) (A1/S)
