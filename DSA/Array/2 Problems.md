@@ -10,7 +10,7 @@
  
   1. [Special Subsequences "AG"](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Special%20Subsequences%20%22AG%22.md)
   2. [Closest MinMax](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Closest%20MinMax.md) (A1)
-  3. [Bulbs](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Bulbs.md)
+  3. [Bulbs](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Bulbs.md) (A1)
   4. [Amazing Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Amazing%20Subarrays.md)
   5. [Even Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Even%20Subarrays.md) (A1)
   6. [Leaders in an array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Leaders%20in%20an%20array.md) (S)
