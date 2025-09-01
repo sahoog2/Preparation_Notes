@@ -18,7 +18,7 @@
    (Subarrays class)
    1. [Counting Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Counting%20Subarrays.md) (A1)
    2. [Good Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Good%20Subarrays.md)
-   3. [Alternating Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Alternating%20Subarrays.md) (A1/A2)
+   3. [Alternating Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Alternating%20Subarrays.md) (A1/A2/S)
    4. [Max Sum Contiguous Subarray](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Max%20Sum%20Contiguous%20Subarray.md) (A1/S)
    5. [Subarray with least average](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Subarray%20with%20least%20average%20medium.md) (A1/S)
    6. [Maximum Subarray Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Maximum%20Subarray.md) (A1/S)
