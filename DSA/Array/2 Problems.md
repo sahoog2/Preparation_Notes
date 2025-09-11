@@ -23,6 +23,6 @@
    5. [Subarray with least average](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Subarray%20with%20least%20average%20medium.md) (A1/S)
    6. [Maximum Subarray Easy](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Maximum%20Subarray.md) (A1/S)
  # Contribution Technique
- 1. [Sum of All Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Sum%20of%20All%20Subarrays.md) (A1)
+ 1. [Sum of All Subarrays](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Sum%20of%20All%20Subarrays.md) (A1/S)
  #  2-D Array/Matrix
 
