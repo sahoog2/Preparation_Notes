@@ -187,5 +187,6 @@ so  if(sum < B){ ans++; } should be replaced with a logic which calculates the n
 we can consider i as right and curr as left for better clarity. So the formula becomes sum += right - left +1
  
  2. Attempt 2
+    Couldnt come up with optimized solution though able to solve with O(n2)
 
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
