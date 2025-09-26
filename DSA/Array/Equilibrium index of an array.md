@@ -92,7 +92,7 @@
 
 
 <details>
-  <summary>
+  <summary> Solution </summary>
       The idea is to get the total sum of the array first. Then Iterate through the array and keep updating the left sum which is initialized as zero. In the loop, we can get the right sum by subtracting the elements one by one.
     
     1) Initialize leftsum  as 0
@@ -144,12 +144,4 @@
         }
     }
     ```
-    
-  </summary>
 </details>
-
-
-
-
-
-[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
