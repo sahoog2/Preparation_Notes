@@ -1,7 +1,6 @@
 #  Special Index
 
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25455/assignment/problems/12828/hints?navref=cl_pb_nv_tb)
-[Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 
 <details>
@@ -69,7 +68,7 @@ Removing arr[1] from the given array modifies arr[] to { 1, 1 } such that arr[0]
 Removing arr[2] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
 Therefore, the required output is 3.
 </details>
-[Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
+
 <details>
 <summary># Approach </summary>
 
