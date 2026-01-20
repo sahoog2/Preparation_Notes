@@ -4,7 +4,8 @@
 [Solution](#Solution)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 
-**Problem Description**  
+<details>
+    <summary>**Problem Description**  </summary>
 
 Given an array,  **arr[]**  of size  **N**, the task is to find the count of array indices such that removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal.
 
@@ -67,9 +68,10 @@ Removing arr[0] from the given array modifies arr[] to { 1, 1 } such that arr[0]
 Removing arr[1] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
 Removing arr[2] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
 Therefore, the required output is 3.
-
+</details>
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
-# Solution
+<details>
+<summary># Approach </summary>
 
 Based on the observation that removing any element from the given array makes even indices of succeeding elements 
 as odd and odd indices of the succeeding elements as even. 
@@ -88,7 +90,10 @@ Finally, print the count obtained. Check out the complete solution for more clar
 
 Time complexity : O(N) 
 Space Complexity : O(1)
+</details>
 
+<details> 
+  <summary>Code</summary>
 ```java
 public class Solution {
 
@@ -209,7 +214,7 @@ public class Solution {
     }
 }
 ```
-
+</details>
 
 #### **🚀 Key Observation**
 
