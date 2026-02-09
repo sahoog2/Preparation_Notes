@@ -1,3 +1,4 @@
+
 #  Equilibrium index of an array
 [Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25453/homework/problems/3852/hints?navref=cl_pb_nv_tb)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
@@ -85,9 +86,9 @@ If K is greater than the size of the array, we can simply perform modulo on it w
 
 <details>
     <summary>code</summary>
-    ```java
-        
-public class Solution {
+  
+    ```
+        public class Solution {
     public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> a, ArrayList<Integer> b) {
         ArrayList< ArrayList<Integer> > ans = new ArrayList<>();
         int n = a.size();
@@ -98,9 +99,7 @@ public class Solution {
         }
         return ans;
     }
-}
-```
-    
+    }```
 </details>
 
       
