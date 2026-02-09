@@ -1,6 +1,6 @@
 # Introduction To Array
 
- 1. [ Multiple left rotations of the array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Equilibrium%20index%20of%20an%20array.md)
+ 1. [ Multiple left rotations of the array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Multiple%20left%20rotations%20of%20the%20array.md)
     
 # Prefix Sum
 
