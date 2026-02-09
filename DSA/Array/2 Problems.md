@@ -1,3 +1,7 @@
+# Introduction To Array
+
+ 1. [ Multiple left rotations of the array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Equilibrium%20index%20of%20an%20array.md)
+    
 # Prefix Sum
 
  1. [Equilibrium index of an array](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Equilibrium%20index%20of%20an%20array.md) (S)
