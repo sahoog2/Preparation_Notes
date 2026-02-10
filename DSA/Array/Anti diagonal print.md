@@ -65,8 +65,140 @@ Give a N * N square matrix A, return an array of its anti-diagonals. Look at the
 
 <details>
 <summary>Approach</summary>
+  
+Think of anti‑diagonal printing as **walking through the matrix by index sums**. The intuition is:
+
+----------
+
+### 1. Each anti‑diagonal is defined by `row + col`
+
+-   In a 2D array, elements that lie on the same anti‑diagonal share the same sum of indices.
+-   Example: `(0,2), (1,1), (2,0)` all have `row+col = 2`.
+
+----------
+
+### 2. Traverse by diagonals, not rows
+
+-   Instead of scanning row by row, you group elements by their index sum.
+-   Start with sum = 0 (top‑left corner), then sum = 1, sum = 2, … until sum = `n+m-2`.
+
+----------
+
+### 3. Collect elements for each sum
+
+-   For a given sum `s`, valid positions are `(i, j)` where:
+    -   `i + j = s`
+    -   `i` is within row bounds
+    -   `j` is within column bounds
+-   This gives you the elements of that anti‑diagonal.
+
+----------
+
+### 4. Print diagonals in order
+
+-   Begin with the top row, moving right.
+-   Then continue from the last column, moving down.
+-   Each time, collect elements along the anti‑diagonal and print them.
+
+----------
+
+### 📚 Example
+
+Matrix:
+
+```
+1 2 3
+4 5 6
+7 8 9
+
+```
+
+-   Sum = 0 → `(0,0)` → `1`
+-   Sum = 1 → `(0,1),(1,0)` → `2,4`
+-   Sum = 2 → `(0,2),(1,1),(2,0)` → `3,5,7`
+-   Sum = 3 → `(1,2),(2,1)` → `6,8`
+-   Sum = 4 → `(2,2)` → `9`
+
+Output:
+
+```
+1
+2 4
+3 5 7
+6 8
+9
+
+```
+
+----------
+
+### ✅ Key Insight
+
+The trick is to realize that **anti‑diagonals are indexed by the sum of row and column indices**. Once you see that, printing them is just looping over possible sums and collecting elements.
+
 </details>   
 
 <details>
 <summary>Code</summary>
+  
+Here’s a clear Java implementation that follows the intuition we discussed — grouping elements by the sum of their indices (`row + col`) to print anti‑diagonals:
+
+```java
+public class AntiDiagonal {
+    public static void printAntiDiagonals(int[][] matrix) {
+        int n = matrix.length;        // number of rows
+        int m = matrix[0].length;     // number of columns
+
+        // The maximum sum of indices is (n-1 + m-1)
+        for (int sum = 0; sum <= n + m - 2; sum++) {
+            // For each possible sum, collect elements
+            for (int i = 0; i < n; i++) {
+                int j = sum - i; // column index
+                if (j >= 0 && j < m) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            }
+            System.out.println(); // move to next anti-diagonal
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        printAntiDiagonals(matrix);
+    }
+}
+
+```
+
+----------
+
+### 🧠 How It Works
+
+-   Outer loop: iterates over all possible sums of indices (`sum = 0` to `n+m-2`).
+-   Inner loop: for each row `i`, compute column `j = sum - i`.
+-   If `j` is valid, print `matrix[i][j]`.
+-   This groups elements by anti‑diagonal.
+
+----------
+
+### 📚 Example Output for 3×3 Matrix
+
+```
+1
+2 4
+3 5 7
+6 8
+9
+
+```
+
+----------
+
+This approach is efficient (`O(n*m)`) and works for any rectangular matrix, not just square ones.
+
 </details> 
