@@ -64,9 +64,9 @@ Give a N * N square matrix A, return an array of its anti-diagonals. Look at the
 </details>
 
 <details>
-<summary>Approach</summary
+<summary>Approach</summary>
 </details>   
 
 <details>
-<summary>Code</summary
+<summary>Code</summary>
 </details> 
