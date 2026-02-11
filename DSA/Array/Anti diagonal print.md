@@ -144,32 +144,48 @@ The trick is to realize that **anti‑diagonals are indexed by the sum of row an
 Here’s a clear Java implementation that follows the intuition we discussed — grouping elements by the sum of their indices (`row + col`) to print anti‑diagonals:
 
 ```java
-public class AntiDiagonal {
-    public static void printAntiDiagonals(int[][] matrix) {
-        int n = matrix.length;        // number of rows
-        int m = matrix[0].length;     // number of columns
+import java.util.ArrayList;
+import java.util.Collections;
 
-        // The maximum sum of indices is (n-1 + m-1)
-        for (int sum = 0; sum <= n + m - 2; sum++) {
-            // For each possible sum, collect elements
-            for (int i = 0; i < n; i++) {
-                int j = sum - i; // column index
-                if (j >= 0 && j < m) {
-                    System.out.print(matrix[i][j] + " ");
+public class Solution {
+    public ArrayList<ArrayList<Integer>> diagonal(ArrayList<ArrayList<Integer>> A) {
+        int N = A.size();
+        int total = 2 * N - 1;
+
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>(total);
+
+        for (int sum = 0; sum <= 2 * N - 2; sum++) {
+            // initialize a row of length N filled with zeros
+            ArrayList<Integer> diag = new ArrayList<>(Collections.nCopies(N, 0));
+            int writeIndex = 0;
+
+            for (int i = 0; i < N; i++) {
+                int j = sum - i;
+                if (j >= 0 && j < N) {
+                    diag.set(writeIndex++, A.get(i).get(j));
                 }
             }
-            System.out.println(); // move to next anti-diagonal
+
+            result.add(diag);
         }
+
+        return result;
     }
 
+    // quick test
     public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
+        ArrayList<ArrayList<Integer>> mat = new ArrayList<>();
+        mat.add(new ArrayList<Integer>() {{ add(1); add(2); add(3); }});
+        mat.add(new ArrayList<Integer>() {{ add(4); add(5); add(6); }});
+        mat.add(new ArrayList<Integer>() {{ add(7); add(8); add(9); }});
 
-        printAntiDiagonals(matrix);
+        Solution s = new Solution();
+        ArrayList<ArrayList<Integer>> out = s.diagonal(mat);
+
+        for (ArrayList<Integer> row : out) {
+            for (int v : row) System.out.print(v + " ");
+            System.out.println();
+        }
     }
 }
 
@@ -177,28 +193,17 @@ public class AntiDiagonal {
 
 ----------
 
-### 🧠 How It Works
+Explanation
+- Key idea: elements on the same anti‑diagonal share the same sum i + j. Iterate sum from 0 to 2*N - 2.
+- For each sum create an ArrayList<Integer> of length N prefilled with zeros so vacant slots remain 0.
+- Walk rows i = 0..N-1, compute j = sum - i. If j is in bounds, place A.get(i).get(j) into the next available position in the current diagonal row using a writeIndex.
+- Append the completed diagonal row to the result. This produces exactly 2*N - 1 rows each of length N with unused positions as 0.
+Complexity
+- Time: O(N^2). Each matrix element is visited once.
+- Space: O(N^2) for the output of size (2N-1)\times N.
+Edge cases
+- N = 1 returns a single row containing the single element.
+- Values up to 10^9 fit in int. If larger values are possible, use long and ArrayList<Long>.
 
--   Outer loop: iterates over all possible sums of indices (`sum = 0` to `n+m-2`).
--   Inner loop: for each row `i`, compute column `j = sum - i`.
--   If `j` is valid, print `matrix[i][j]`.
--   This groups elements by anti‑diagonal.
-
-----------
-
-### 📚 Example Output for 3×3 Matrix
-
-```
-1
-2 4
-3 5 7
-6 8
-9
-
-```
-
-----------
-
-This approach is efficient (`O(n*m)`) and works for any rectangular matrix, not just square ones.
 
 </details> 
