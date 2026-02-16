@@ -1,5 +1,5 @@
 
-[Use Hint]()
+[Use Hint](https://www.scaler.com/academy/mentee-dashboard/class/25462/assignment/problems/11464/hints?navref=cl_pb_nv_tb)
 [Go Back](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/2%20Problems.md)
 
 <details>
