@@ -8,6 +8,7 @@
 
 Matrix Multiplication 
 
+<img width="640" height="384" alt="11464-1" src="https://github.com/user-attachments/assets/649f31eb-fd74-4d27-9aba-733a83518752" />
 
 Problem Constraints
 
