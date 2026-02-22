@@ -1,3 +1,4 @@
+
 # Arrays
 
 ## Basics:
@@ -291,14 +292,36 @@ Pseudo Code:
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeHoIIBWW9CPCNHarOHi2RxGEbrGaL9A7NqvKu6p7-X5cmBdawX_c0pZIGOyqhnQzvX84wsf_Itc77dgfOb8J_OlXUEpPL6OL_6wN3W0ZDMW4nL_GQWGxeKXbggYXDZ4FJWi5d9c2SqVLGneNaR4MAEECBo?key=Ksui3maNtsnPvdDfGduImg)
 
 ## My realization formulas
- 1. ✅ Formula for no of subarrays that can be formed starting from index 'left' & maximum ending at index 'right' .
+
+ 1. ✅ Multiple left rotation of an array
+
+> If we are required to do K left rotations, we can append the first K
+> elements of the array to the back and delete them from the front. If K
+> is greater than the size of the array, we can simply perform modulo on
+> it with array size as after exact rotation of array’s size times the
+> array return to its original state
+Below example is to rotate array "a" , b times.
+```
+    public class Solution {
+public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> a, int b) {
+    ArrayList<Integer> ans = new ArrayList<>();
+    int n = a.size();
+    for(int i=0;i<n;i++) {
+        ans.add(a.get( (i+b) % n ));
+    }
+    return ans;
+}
+}
+```
+     
+ 2. ✅ Formula for no of subarrays that can be formed starting from index 'left' & maximum ending at index 'right' .
 
 > count of subarrays = (right - left + 1)  
 > <br>starting at 0 and max ending at 2, 
 > <br>sub arrays are  {0},{0,1},{0,1,2} -> 3 
 > <br> with the formula = 2-0+1 = 3
 
-2. ✅ No of times an element of an array appears in all the subarray formed from the array.
+3. ✅ No of times an element of an array appears in all the subarray formed from the array.
 > at position i , the contribution of the element is **(i+1)*(n-i) times**
    
 >  For each element, if we know how many subarrays do they come in, we can easily calculate their contribution to the sum as
@@ -310,8 +333,7 @@ Pseudo Code:
 >  <br>We can easily know X and Y from the index of the element.
 >  <br>Let the array be 0 - indexed and N be the length of the array, X = i, Y = N - i - 1
 >  <br> the formula at position i will be **(i+1)*(n-i) times contribution** as i itself also need to be considered.
-
-  
+ 
 
 Revision Video -  
   
