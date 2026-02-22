@@ -233,6 +233,7 @@ leftEven + remainingOdd == leftOdd + remainingEven
 Breaking down each term:
 
 -   **leftEven:** Sum of even-indexed elements **before** index `i`
+  
 -   **remainingOdd:** Sum of odd-indexed elements **after** index `i` (excluding `A[i]` if `i` is odd)
 -   **leftOdd:** Sum of odd-indexed elements **before** index `i`
 -   **remainingEven:** Sum of even-indexed elements **after** index `i` (excluding `A[i]` if `i` is even)
