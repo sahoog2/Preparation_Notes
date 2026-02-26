@@ -34,5 +34,5 @@
  2. [Matrix Multiplication](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Matrix%20Multiplication.md)
  3. [Rotate Matrix](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Rotate%20Matrix.md)
  # Miscellaneous 
- 1. [Length of longest consecutive ones]()
+ 1. [Length of longest consecutive ones](https://github.com/sahoog2/Preparation_Notes/blob/main/DSA/Array/Length%20of%20longest%20consecutive%20ones.md)
 
