@@ -125,7 +125,22 @@ graph TD
 ### Questions
 
 - What is Java?
+  
+  Java is best understood as a **software platform**, not just a programming language. The Java language is only one part of that platform—it lets developers express application logic using a well-defined syntax and set of rules. That source code is then compiled by the Java compiler (`javac`) into **bytecode**, an intermediate, platform-independent instruction set. 
+  
+  The **Java Virtual Machine (JVM)** executes this bytecode, manages memory, performs garbage collection, optimizes execution through Just-In-Time (JIT) compilation, and interacts with the underlying operating system. Alongside the JVM, Java provides a rich **standard library** (collections, networking, I/O, concurrency, etc.) and development tools bundled in the **Java Development Kit (JDK)**. 
+  
+  In other words, when people say "Java," they are usually referring to an ecosystem composed of the **language, compiler, bytecode, JVM, runtime libraries, and developer tools**, all working together to provide a portable, secure, and high-performance application platform.
+
 - What isn't Java?
+
+  A common misconception is that Java is not just a programming language, nor is it the JVM, the JDK, or the operating system. The Java language is only the syntax and rules developers use to write programs.
+
+  The Java Virtual Machine (JVM) is the runtime that executes compiled Java bytecode, while the Java Development Kit (JDK) is a toolkit that includes the compiler (javac), the JVM, standard libraries, and development utilities.
+
+  Java is also not machine code that runs directly on a CPU, nor does it communicate directly with hardware or the operating system; the JVM performs those interactions on behalf of Java applications.
+
+  Finally, Java is not synonymous with frameworks such as Spring or Jakarta EE—these are independent technologies built on top of the Java platform, not part of Java itself.
 - Why does the JVM exist?
 - Why compile to bytecode instead of machine code?
 - Why are there multiple JVM implementations?
