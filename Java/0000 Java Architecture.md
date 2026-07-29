@@ -189,7 +189,7 @@ Now learn only the language.
 
 ```mermaid
 graph TD
-    Language[LANGUAGE] --> LexicalStructure[Lexical Structure]
+    Language["LANGUAGE"] --> LexicalStructure["Lexical Structure"]
     Language --> Types
     Language --> Variables
     Language --> Operators
@@ -205,8 +205,22 @@ graph TD
     Language --> Exceptions
     Language --> Lambdas
     Language --> Modules
-    Language --> ReflectionUsage[Reflection (usage)]
+    Language --> ReflectionUsage["Reflection (usage)"]
 ```
+
+### Example Decomposition — Classes
+
+```mermaid
+flowchart TD
+    C_Classes["CLASSES"] --> C_ClassMembers["Class Members"]
+    C_ClassMembers --> C_Fields["Fields"]
+    C_Fields --> C_Methods["Methods"]
+    C_Methods --> C_Constructors["Constructors"]
+    C_Constructors --> C_Initialization["Initialization"]
+    C_Initialization --> C_Inheritance["Inheritance"]
+    C_Inheritance --> C_Polymorphism["Polymorphism"]
+```
+
 
 ### Example Decomposition — Classes
 
